@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "name": "WOW Narrative Fixture",
+    "start": "T:Intro",
+    "flows": ["intro-defn-proof", "walkthrough"],
+    "notes": "Minimal graph with one variant group (proof difficulty)."
+  },
+  "topics": [
+    {
+      "id": "T:Intro",
+      "type": "Section",
+      "title": "Why Eigenvectors?",
+      "context": { "level": "beginner", "language": "en" },
+      "content": "Motivation and overview."
+    },
+    {
+      "id": "T:Def:Eigenvector",
+      "type": "Definition",
+      "title": "Definition of Eigenvector",
+      "context": { "level": "beginner", "language": "en" },
+      "content": "Ax = λx with x ≠ 0."
+    },
+    {
+      "id": "T:Thm:Spectral",
+      "type": "Theorem",
+      "title": "Spectral Theorem (symmetric case)",
+      "context": { "level": "advanced", "language": "en" },
+      "content": "Every real symmetric matrix is orthogonally diagonalizable."
+    },
+    {
+      "id": "T:Proof:Spectral:medium",
+      "type": "Proof",
+      "title": "Proof (Sketch)",
+      "variantOf": "V:Proof:Spectral",
+      "variant": { "varKey": "difficulty", "varValue": "medium" },
+      "context": { "level": "beginner", "language": "en" },
+      "content": "Sketch using quadratic forms and orthogonal bases."
+    },
+    {
+      "id": "T:Proof:Spectral:high",
+      "type": "Proof",
+      "title": "Proof (Full)",
+      "variantOf": "V:Proof:Spectral",
+      "variant": { "varKey": "difficulty", "varValue": "high" },
+      "context": { "level": "advanced", "language": "en" },
+      "content": "Full argument via the spectral decomposition of self-adjoint operators."
+    },
+    {
+      "id": "T:Ex:Diagonalization",
+      "type": "Example",
+      "title": "Diagonalizing a 2×2 symmetric matrix",
+      "context": { "level": "beginner", "language": "en" },
+      "content": "Compute eigenpairs; form Q; show QᵀAQ = D."
+    }
+  ],
+  "variantGroups": [
+    {
+      "id": "V:Proof:Spectral",
+      "varKey": "difficulty",
+      "members": [
+        { "topic": "T:Proof:Spectral:medium", "varValue": "medium", "context": { "level": "beginner" } },
+        { "topic": "T:Proof:Spectral:high",   "varValue": "high",   "context": { "level": "advanced" } }
+      ]
+    }
+  ],
+  "associations": [
+    {
+      "id": "N1",
+      "type": "Narrative",
+      "flowRef": "intro-defn-proof",
+      "from": "T:Intro",
+      "to": "T:Def:Eigenvector",
+      "transitionText": "As a first step, we define eigenvectors.",
+      "context": { "language": "en" }
+    },
+    {
+      "id": "N2",
+      "type": "Narrative",
+      "flowRef": "intro-defn-proof",
+      "from": "T:Def:Eigenvector",
+      "to": "T:Thm:Spectral",
+      "transitionText": "With this definition in hand, we can state the spectral theorem.",
+      "context": { "language": "en" }
+    },
+    {
+      "id": "N3",
+      "type": "Narrative",
+      "flowRef": "intro-defn-proof",
+      "from": "T:Thm:Spectral",
+      "to": "V:Proof:Spectral",
+      "transitionText": "We now prove the theorem.",
+      "context": { "language": "en" }
+    },
+
+    {
+      "id": "W1",
+      "type": "Narrative",
+      "flowRef": "walkthrough",
+      "from": "T:Intro",
+      "to": "T:Ex:Diagonalization",
+      "transitionText": "Let’s see a concrete example before formalities.",
+      "context": { "language": "en" }
+    },
+    {
+      "id": "W2",
+      "type": "Narrative",
+      "flowRef": "walkthrough",
+      "from": "T:Ex:Diagonalization",
+      "to": "T:Def:Eigenvector",
+      "transitionText": "This motivates the formal definition.",
+      "context": { "language": "en" }
+    },
+    {
+      "id": "W3",
+      "type": "Narrative",
+      "flowRef": "walkthrough",
+      "from": "T:Def:Eigenvector",
+      "to": "T:Thm:Spectral",
+      "transitionText": "Now the theorem becomes natural.",
+      "context": { "language": "en" }
+    },
+    {
+      "id": "W4",
+      "type": "Narrative",
+      "flowRef": "walkthrough",
+      "from": "T:Thm:Spectral",
+      "to": "V:Proof:Spectral",
+      "transitionText": "Finally, the proof.",
+      "context": { "language": "en" }
+    },
+
+    {
+      "id": "S1",
+      "type": "Semantic",
+      "depKind": "prereq",
+      "from": "T:Def:Eigenvector",
+      "to": "T:Thm:Spectral"
+    },
+    {
+      "id": "S2",
+      "type": "Semantic",
+      "depKind": "illustrates",
+      "from": "T:Ex:Diagonalization",
+      "to": "T:Thm:Spectral"
+    }
+  ]
+}
