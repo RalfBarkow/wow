@@ -1,0 +1,184 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:14:56.351525+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:16:41.935702+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "3fNzUyH/DQCIUzu4CtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here’s a do-it chunk for the **pharo-code-emitter agent** that fixes\n{{gtMethod:GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome}} by introducing a small\n`GtWowInputFile` helper (subclass of `GtInputFile`) and using it in the example. [chatgpt](https://chatgpt.com/g/g-p-68cacb9c00a48191859996f22777f5d9-wow/c/69096e97-3554-832e-a8d7-7b7c8643583e)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:15:15.663746+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:15:15.663746+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "x6GaVCH/DQCIZ2/tCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paste & run this as one do-it:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:15:05.64346+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:15:19.324886+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "BsIBVCH/DQCIX7pdCtT4xw=="
+				},
+				"code" : "\"Do-it: define GtWowInputFile helper and fix\n GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome\"\n\n| parserClass wowInputClass |\n\n\"Ensure the parser class exists\"\nparserClass := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n\tGtInputParser subclass: #GtWowSpecInputParser\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\n\"Define a tiny GtInputFile subclass that understands #fileReference\"\nwowInputClass := Smalltalk at: #GtWowInputFile ifAbsent: [\n\tGtInputFile subclass: #GtWowInputFile\n\t\tinstanceVariableNames: 'fileReference'\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\nwowInputClass class\n\tcompile: 'onFileReference: aFileReference\n\t^ self new\n\t\tfileReference: aFileReference;\n\t\tyourself'\n\tclassified: 'instance creation'.\n\nwowInputClass\n\tcompile: 'fileReference\n\t^ fileReference'\n\tclassified: 'accessing'.\n\nwowInputClass\n\tcompile: 'fileReference: aFileReference\n\tfileReference := aFileReference'\n\tclassified: 'accessing'.\n\n\n\"Fix the example to use GtWowInputFile (which *does* understand #fileReference)\"\nparserClass class\n\tcompile: 'exampleEvaluateWowSpecOnHome\n<gtExample>\n| fileRef input parser result |\nfileRef := FileLocator home / ''workspace/wow/SPEC.md''.\ninput := GtWowInputFile onFileReference: fileRef.\nparser := self new.\n(parser canHandle: input)\n\tifFalse: [ ^ ''GtWowSpecInputParser does not recognise this file.'' ].\nresult := parser parse: input.\n^ result'\n\tclassified: 'examples'."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:14:35.272161+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:18:33.282395+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ZlQyUiH/DQCIKBgICtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "After running this:\n\n* `exampleEvaluateWowSpecOnHome` no longer calls the non-existent\n  {{gtMethod:GtInputFile>>onFileReference:}}.\n* The `input` passed to `canHandle:` is a `GtWowInputFile`, which:\n\n  * **isKindOf:** `GtInputFile` (so your guard still works),\n  * responds to `#fileReference` (used inside `canHandle:`).\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T08:15:37.605506+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T08:15:37.605506+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "define GtWowInputFile helper and fix\n GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "534b3252-21ff-0d00-8827-44350ad4f8c7"
+	}
+}

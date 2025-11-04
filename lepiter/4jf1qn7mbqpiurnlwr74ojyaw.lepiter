@@ -1,0 +1,372 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:33:25.08204+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:33:44.685003+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "6+/OER//DQCl5ry6Cv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I am still unclear about the interaction between FileLocator and FileReference>>#gtInputWhyViewOn:."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:33:46.170744+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:33:58.457239+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "LLQQEx//DQCmBWvACv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "See [[WOW / GT – Architecture Note]]"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:33:41.938524+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:35:40.173174+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "TSDQEh//DQCl/IvLCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I think of a Chain of Responsibility pattern for {{gtClass:GtInputFile}} and {{gtClass:GtInputParser}}"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:36:41.008822+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:36:42.70161+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "64p8HR//DQCoUnuBCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Which agent should I speak to? Can you already say anything about this with their help?"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:42:50.245791+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:42:50.245791+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5aB+Mx//DQCoavl+Cv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The short answer:\n**Talk to `architecture-scribe`, with `codebase-locator` as helper.**\n\nThis is again an architecture / collaboration question (not just docs, not runtime wiring), and it’s basically “a second Chain of Responsibility”, this time around inputs and parsers.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:42:46.290169+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:51:14.923028+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "aEVCMx//DQCoY2HaCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### 1. How `FileLocator` and `FileReference>>gtInputWhyViewOn:` relate\n\nSequence, step-by-step:\n\n1. **You write**\n\n   ```smalltalk\n   FileLocator home / 'workspace/wow/SPEC.md'\n   ```\n\n   → CoR #1 (FileLocator + FileSystemResolver chain) kicks in and returns a **`FileReference`**.\n\n2. That `FileReference` is just “this file at this path”, but in GT it has extra views, one of them being\n\n   ```smalltalk\n   FileReference>>gtInputWhyViewOn:\n   ```\n\n3. **When you open the “Why?” input view** on that file, GT does:\n\n   * wrap the `FileReference` in a **`GtInputFile`** (a concrete `GtInput`)\n   * send this `GtInputFile` into the **input parsing pipeline** (CoR #2, see below)\n   * collect information about:\n\n     * which parsers were asked,\n     * which ones claimed they could handle it (and with what score),\n     * which one finally “won”.\n\n4. `gtInputWhyViewOn:` then renders that *explanation of the pipeline*:\n\n   * “This file is treated as input X because parser Y matched it,\n     parser Z declined, parser W had lower priority,” etc.\n\nSo:\n\n* **FileLocator + FileSystemResolver** = resolve *where* the file is (CoR #1).\n* **FileReference>>gtInputWhyViewOn:** = introspective UI on *how this file is parsed* (CoR #2).\n\nThey touch at exactly one point: the `FileReference` produced by the locator is the *starting point* for the input pipeline explanation.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:44:08.017711+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:51:51.03843+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qlAhOB//DQCocSq1Cv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### 2. Chain of Responsibility for `GtInputFile` / `GtInputParser`\n\nYes, it’s very natural to model this as a Chain (or “competition chain”) of responsibility:\n\n* **Handler interface:** `GtInputParser`\n* **Concrete handlers:** subclasses like “Markdown spec parser”, “Lepiter page parser”, “Null parser”, etc.\n* **Request:** a `GtInput` instance, here a `GtInputFile` built from your `FileReference`.\n\nConceptually, the flow is:\n\n1. Take a **`GtInputFile`** (from the file).\n2. Ask **each parser** “Can you handle this? With what priority/score?”\n   (Some parsers immediately say “no”, others say “yes, strongly”, etc.)\n3. Pick the best candidate (or fall back to `GtNullInputParser`).\n4. Use that parser’s result as the *meaning* of the input.\n\nThat’s your second CoR:\n\n* **CoR #1:** origin → `FileReference` (FileLocator / FileSystemResolver).\n* **CoR #2:** `GtInputFile` → parsed representation (GtInputParser chain).\n\n`gtInputWhyViewOn:` is essentially the **debugging / explanation view for CoR #2**.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:45:01.882751+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:51:25.369087+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qz9XOx//DQCoeF/zCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### 3. What architecture-scribe would write here\n\nIf we let `architecture-scribe` speak, it might record:\n\n* **Pattern:** Chain of Responsibility (input parsing)\n* **Context:** Turn arbitrary inputs (files, URLs, …) into structured domain objects.\n* **Participants:**\n\n  * `GtInput` / `GtInputFile` – the input object\n  * `GtInputParser` – abstract handler\n  * concrete parser subclasses – handlers in the chain/competition\n  * `FileReference` – origin of `GtInputFile` when the input is a file\n  * `FileLocator` – upstream resolver that produces the `FileReference`\n* **Rule:**\n\n  * Never special-case parsing in `FileLocator` or `FileReference`.\n  * Always add new behaviour by introducing or configuring `GtInputParser` subclasses.\n  * Use `gtInputWhyViewOn:` to inspect why a given parser was chosen.\n\n`codebase-locator` then helps by pointing you at the actual GT classes / methods where this chain is implemented (parsers registry, scoring logic, etc.).\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:40:13.60653+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:51:35.602474+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vIYoKh//DQCoW0AwCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If you want, next step could be: I can draft a small CRC set just for **GtInput / GtInputParser / gtInputWhyViewOn:** as an “Input Parsing CoR” note, parallel to the filesystem one.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T05:33:25.024002+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T05:33:25.024002+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Page 1"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "680cce11-1fff-0d00-a5e5-2d4f0afdac4c"
+	}
+}

@@ -1,0 +1,25 @@
+# direnv
+.direnv/
+
+# Nix build artifacts
+result
+result-*
+.nix-*
+
+# Local env overrides (keep secrets / machine-specific stuff out of git)
+.envrc.local
+
+# Local DITA-OT toolkit copy
+.dita-ot/
+
+# macOS
+.DS_Store
+
+# Editors / IDEs
+.idea/
+.vscode/
+*~
+\#*\#
+
+# Lepiter / GT backup files
+*.bak

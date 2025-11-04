@@ -1,0 +1,897 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:47:53.084488+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:47:53.084488+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "opSLRR//DQCoqT0MCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here’s the “Input Parsing CoR” note + CRC set, parallel to the FileLocator one. [chatgpt](https://chatgpt.com/g/g-p-68cacb9c00a48191859996f22777f5d9-wow/c/69096e97-3554-832e-a8d7-7b7c8643583e)\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:55:14.475664+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:55:14.475664+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "06zaXx//DQCmQs0QBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We have a second Chain of Responsibility:\n\n1. **Upstream**\n\n   * `FileLocator` + `FileSystemResolver` → returns a `FileReference`.\n\n2. **Input wrapping**\n\n   * GT wraps that `FileReference` into a `GtInputFile` (a concrete `GtInput`).\n\n3. **Input parsing CoR**\n\n   * A set of `GtInputParser` subclasses are asked to handle this `GtInputFile`.\n   * Each parser can:\n\n     * recognise the input (often with a *score* or priority), and produce a parsed representation, or\n     * decline / return “not for me”.\n\n4. **Selection**\n\n   * The input infrastructure picks the best matching parser.\n   * If none is suitable, it falls back to `GtNullInputParser`.\n\n5. **Introspection**\n\n   * `FileReference>>gtInputWhyViewOn:` builds an explanation view of step 3–4:\n\n     * which parsers were tried,\n     * who declined,\n     * who won,\n     * why this file is treated as “a SPEC set”, “plain Markdown”, “unknown”, etc.\n\nSo:\n\n* **CoR #1** (FileLocator) decides *which file*.\n* **CoR #2** (GtInputParser) decides *what this file means*.\n* `gtInputWhyViewOn:` is the **“black box opened”** view of CoR #2.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:55:08.105496+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:55:08.105496+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "snl5Xx//DQCmO3XgBFTNYw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "WOW / GT – Architecture Note\n**Topic:** Chain of Responsibility for inputs (`GtInput` / `GtInputParser` / `gtInputWhyViewOn:`)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T05:57:31.85284+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T05:57:31.85284+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "Ld4KaB//DQCnOe0DBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "**Responsibilities:**\n* Abstract representation of “something to be interpreted” (file, string, network resource, etc.).\n* Provide a common protocol for parsers (e.g. access to raw content, metadata)."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T05:57:21.475549+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T05:57:33.943137+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "vYNsZx//DQCnKj7QBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "  **Collaborators:**\n* `GtInputParser` (consumes `GtInput` to produce parsed results).\n* Concrete subclasses such as `GtInputFile`."
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:57:18.258481+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:57:18.258481+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "T2w7Zx//DQCnI2RwBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "**Class:** {{gtClass:GtInput}}"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:01:04.616009+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:01:04.630497+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "yYPIbB//DQCndjc/BFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "**Responsibilities:**\n* Represent an input backed by a {{gtClass:FileReference}}.\n* Provide file-specific access (path, extension, contents) to parsers.\n* Bridge from filesystem world (`FileReference`) into input world (`GtInput`)."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:01:12.581737+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:01:12.59505+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "Q3Xfah//DQCnVye4BFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : " **Collaborators:**\n* {{gtClass:FileReference}} (source)\n* {{gtClass:GtInput}} (superclass)\n* {{gtClass:GtInputParser}} subclasses"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:58:15.712379+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:58:15.712379+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "VCGoah//DQCnUD60BFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "**Class:** {{gtClass:GtInputFile}} (concrete input)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:03:41.592436+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:03:41.592436+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "gqkUfh//DQCovCeEBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "**Responsibilities:**\n* Define the protocol for “Can I interpret this `GtInput`?”.\n* Optionally compute a *score* / priority indicating how strong the match is.\n* Produce a parsed / semantic representation when it accepts the input."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:03:09.612623+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:03:46.095914+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "T7AsfB//DQCoZ9SRBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : " **Collaborators:**\n* `GtInput` / `GtInputFile`\n* Concrete parser subclasses\n* The parser selection infrastructure (registry / manager)."
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:03:05.870753+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:03:22.795333+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "MpLzex//DQCoYFjtBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "**Class:** {{gtClass:GtInputParser}} (abstract handler in CoR)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:07:02.625514+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:07:04.203205+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "o3KYhB//DQCpa3bKBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "**Responsibilities:**\n* Act as the “no-op” parser when nothing else matches.\n* Provide a safe, minimal representation (“unknown input”), so views don’t crash.\n* Make clear in {{gtMethod:FileReference>>#gtInputWhyViewOn:}} that no specialised parser claimed this input."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:07:12.520404+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:07:12.540207+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "8JA/hB//DQCpVfFABFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : " **Collaborators:**\n* {{gtClass:GtInputParser}} (superclass)\n* Input parsing registry / selection logic"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:04:46.039524+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:05:11.196958+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "owvsgR//DQCo8+ttBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "**Class:** {{gtClass:GtNullInputParser}} (fallback handler)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:08:27.157326+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:08:27.157326+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "aQkajx//DQCqbA9zBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "**Responsibilities:**\n* Recognise domain-specific inputs (e.g. WOW SPEC markdown, Lepiter-like specs).\n* Decide *when* to match (file name, extension, markers, front-matter, etc.).\n* Produce domain objects (e.g. a SpecSet model) used by later tools/agents."
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:07:30.19009+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:08:30.744412+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "3Mi0ix//DQCqI0IeBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "**Collaborators:**\n* `GtInputParser` (superclass)\n* `GtInputFile`\n* Domain model classes (Spec, Narrative Path, …)\n"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:08:19.296176+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:09:43.178618+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Mhaijh//DQCqXTgpBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "**Class:** `<YourDomain>InputParser` (example: {{gtClass:GtSpecSetMarkdownInputParser}})\nSee {{gtClass:GtSpecSetMarkdownParserAdapter}}"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T05:51:00.989359+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:07:30.209305+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "9Me+UB//DQCmKnuuBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "---\n\n**Method / View:** `FileReference>>gtInputWhyViewOn:`\n**Responsibilities:**\n\n* For this `FileReference`, build a `GtInputFile`.\n* Run it through the `GtInputParser` selection pipeline.\n* Collect and display:\n\n  * which parsers were considered,\n  * their decisions / scores,\n  * the winning parser and resulting input type.\n    **Collaborators:**\n* `GtInputFile`\n* `GtInputParser` chain (including `GtNullInputParser`)\n* GT views / morphs rendering the explanation\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:54:52.447589+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:54:52.447589+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "jo2KXh//DQCmMYNMBFTNYw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### CRC cards – Input Parsing CoR"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:07:46.768841+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:07:46.768841+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "YMKxjB//DQCqNRk5BFTNYw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### HumanLayer agents around this pattern\n\n**Agent:** `architecture-scribe`\n**Responsibilities:**\n\n* Own the **Input Parsing Chain of Responsibility** description.\n* Define rules for adding new `GtInputParser` subclasses (naming, scoring, registration).\n* Document the two-layer architecture:\n\n  * CoR #1 (origins → `FileReference`)\n  * CoR #2 (`GtInput` → parsed representation).\n    **Collaborators:**\n* `codebase-locator` (to find all `GtInputParser` subclasses and wiring).\n* `docs-steward` (to turn this into `docs/input-parsing-cor.md`).\n* Domain-specific agents (e.g. “spec-parser” agent) that propose new parsers.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:07:50.705605+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:07:54.116775+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "f83tjB//DQCqPKkrBFTNYw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Agent:** `docs-steward`\n**Responsibilities:**\n\n* Write a short “How GT decides what this file *is*” doc:\n\n  * intro to `FileLocator` → `FileReference`\n  * explanation of `GtInput` / `GtInputParser`\n  * screenshots or mentions of `gtInputWhyViewOn:` as debugging tool.\n* Keep examples in sync with actual parsers you add for WOW.\n  **Collaborators:**\n* `architecture-scribe`\n* `codebase-locator`\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T05:47:15.7113+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:08:00.887605+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "glVRQx//DQCofjzxCv2sTA=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If you’d like, next I can propose a **concrete naming + matching strategy** for a `GtWowSpecInputParser` (what it looks for in `SPEC.md`, how strong it scores, etc.), so that your WOW files show up with a meaningful, domain-specific input type in the Why view.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T05:47:41.117494+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T05:47:41.117494+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Input Parsing CoR"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "10535143-1fff-0d00-a87d-1e2d0afdac4c"
+	}
+}

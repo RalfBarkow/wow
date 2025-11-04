@@ -1,0 +1,686 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:12:57.272997+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:58:58.0195+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Aa0znx//DQCrZ3S4BFTNYw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "* **Talk to:** [[architecture-scribe]] (design of the two Chains of Responsibility)\n* **And then:** `pharo-code-emitter` (to install a concrete `GtWowSpecInputParser` that your `gtInputWhyViewOn:` pipeline can see).\n\nI’ll do both roles now. [chatgpt](https://chatgpt.com/g/g-p-68cacb9c00a48191859996f22777f5d9-wow/c/69096e97-3554-832e-a8d7-7b7c8643583e)\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:57:48.945056+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:57:48.945056+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "OzujPyD/DQCEDCg4CtT4xw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "We now have **two Chains of Responsibility**:\n\n1. **Origin → File**\n   `FileLocator` → `FileSystemResolver` chain → **`FileReference`**\n\n2. **File → Parsed Input**\n   `FileReference` → `GtInputFile` → `GtInputParser` chain → **Parsed representation**\n   (`gtInputWhyViewOn:` is the “explain what happened in #2” view.)\n\nFor WOW, we want a **domain-specific parser** that participates in #2:\n\n> **Name:** `GtWowSpecInputParser`\n> **Responsibility:** recognise and parse WOW SPEC markdown files (e.g. `workspace/wow/SPEC.md`) and show up as the winning parser in `gtInputWhyViewOn:`.\n"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:13:19.222078+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T07:04:55.865177+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "rpKCoB//DQCrdYQNBFTNYw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "A `GtInputFile` should be treated as a WOW SPEC if:\n\n1. **File location / name**\n\n   * `basename = 'SPEC.md'` or\n   * `basename` ends with `'-SPEC.md'`, **and** some parent path segment is `'wow'` or `'WOW'`.\n\n2. **Content marker(s)** (to avoid false positives)\n\n   * First heading is something like `WOW` or `WOW – Narrative Paths`, **or**\n   * Contains a marker string such as `WOW–Narrative Paths` or `# WOW SPEC`.\n\nWe can then define 2 match strengths:\n\n* **Strong match** – filename + WOW marker in header → this parser should win.\n* **Weak match** – filename pattern only → still claim it, but at slightly lower score than “strong”.\n\n`gtInputWhyViewOn:` will then show:\n\n* that `GtWowSpecInputParser` checked this input,\n* its score / decision,\n* that it became the winning parser (instead of e.g. “generic Markdown”).\n"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T07:04:55.854731+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T07:04:55.854731+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "nHQVWSD/DQCFg5r3CtT4xw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "### Matching strategy for `GtWowSpecInputParser`"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:57:34.251395+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:57:34.251395+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "MSDDPiD/DQCEAh5vCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## 1. Architecture-scribe – how this CoR should look"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:13:55.913764+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T07:05:24.97224+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "bHayoh//DQCrh7rbBFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Below is a **do-it chunk** you can paste into a Playground.\nIt defines a first version of {{gtClass:GtWowSpecInputParser}} and a tiny helper for testing.\n\nIt deliberately avoids guessing too much about GT’s internal registry; treat it as:\n\n* a real `GtInputParser` subclass,\n* with **clear extension points** where you can hook into GT’s parser registry once you know the exact selectors (usually by inspecting other `GtInputParser` subclasses in your image)."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:15:04.107472+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:15:04.107472+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "4APDph//DQCrxldABFTNYw=="
+							},
+							"code" : "\"======================\nGtWowSpecInputParser\nDomain-specific input parser for WOW SPEC markdown files.\n======================\"\n\nGtInputParser subclass: #GtWowSpecInputParser\n    instanceVariableNames: ''\n    classVariableNames: ''\n    package: 'Wow-Input'."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:55:16.863417+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T06:55:28.876472+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "8sWSNiD/DQCDx0myCtT4xw=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "{{gtClass:GtWowSpecInputParser}}"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:53:37.029878+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:53:37.029878+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "ZGmfMCD/DQCDtBqHCtT4xw=="
+							},
+							"code" : "\"Do-it: define/extend GtWowSpecInputParser via compile:\"\n\ncls := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n    GtInputParser subclass: #GtWowSpecInputParser\n        instanceVariableNames: ''\n        classVariableNames: ''\n        package: 'Wow-Input' ]."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:54:29.695057+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:54:29.695057+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "GATDMyD/DQCDu7umCtT4xw=="
+							},
+							"code" : "cls class\n    compile: 'gtDescription\n    ^ ''Recognises WOW SPEC markdown files (e.g. workspace/wow/SPEC.md) and provides a domain-specific parsed representation.'''\n    classified: 'documentation'."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:54:47.854551+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:54:47.854551+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "0hvYNCD/DQCDwmUgCtT4xw=="
+							},
+							"code" : "cls class\n    compile: 'registerOn: aParserRegistry\n    self flag: #todo.\n    \"Example pattern to adapt once you know the real registry API:\n        aParserRegistry addParser: self withPriority: 0.9\"'\n    classified: 'registration'."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:55:56.888505+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:55:56.888505+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Y3v1OCD/DQCD4zt1CtT4xw=="
+							},
+							"code" : "cls class\n    compile: 'exampleEvaluateWowSpecOnHome\n    <gtExample>\n    | fileRef input parser result |\n    fileRef := FileLocator home / ''workspace/wow/SPEC.md''.\n    input := GtInputFile onFileReference: fileRef.\n    parser := self new.\n    (parser canHandle: input)\n        ifFalse: [ ^ ''GtWowSpecInputParser does not recognise this file.'' ].\n    result := parser parse: input.\n    ^ result'\n    classified: 'examples'."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:56:15.568595+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:56:15.568595+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "NYMSOiD/DQCD6gCnCtT4xw=="
+							},
+							"code" : "cls\n    compile: 'canHandle: aGtInput\n    (aGtInput isKindOf: GtInputFile) ifFalse: [ ^ false ].\n    | fileRef fileName segments contents hasWowMarker |\n    fileRef := aGtInput fileReference.\n    fileName := fileRef basename.\n    ((fileName = ''SPEC.md'')\n        or: [ fileName endsWith: ''-SPEC.md'' ]) ifFalse: [ ^ false ].\n    segments := fileRef path segments.\n    (segments anySatisfy: [ :each | each asLowercase = ''wow'' ]) ifFalse: [ ^ false ].\n    contents := fileRef readStreamDo: [ :str | str upToEnd ].\n    hasWowMarker := (contents includesSubstring: ''WOW–Narrative Paths'')\n        or: [ contents includesSubstring: ''WOW - Narrative Paths'' ]\n        or: [ contents includesSubstring: ''# WOW SPEC'' ].\n    ^ hasWowMarker'\n    classified: 'matching'."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:56:34.228788+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:56:34.228788+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "XjovOyD/DQCD8YEDCtT4xw=="
+							},
+							"code" : "cls\n    compile: 'parse: aGtInput\n    | fileRef contents firstHeading |\n    fileRef := aGtInput fileReference.\n    contents := fileRef readStreamDo: [ :str | str upToEnd ].\n    firstHeading := (contents lines\n        detect: [ :each | each beginsWith: ''#'' ]\n        ifNone: [ '''' ]).\n    ^ {\n        #type -> #wowSpec.\n        #fileReference -> fileRef.\n        #firstHeading -> firstHeading.\n        #rawText -> contents\n    } asDictionary'\n    classified: 'parsing'."
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:14:33.912839+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:56:34.23554+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Ok72pB//DQCroE4NBFTNYw=="
+							},
+							"code" : "cls\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:14:15.435918+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:14:15.435918+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "AVncox//DQCrlRHDBFTNYw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## 2. Pharo Code Emitter – skeleton implementation"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:12:33.433529+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T06:57:07.832571+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "8e/HnR//DQCrPB+/BFTNYw=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "1. **Run the do-it** to define the class.\n2. In GT, inspect `GtWowSpecInputParser` and compare it to existing `GtInputParser` subclasses:\n\n   * copy the exact **registration** pattern they use into `registerOn:`.\n   * if GT uses a more structured “match score” object instead of boolean `canHandle:`, adapt `canHandle:` accordingly.\n3. Use `FileReference>>gtInputWhyViewOn:` on `workspace/wow/SPEC.md` and see:\n\n   * whether `GtWowSpecInputParser` appears in the list,\n   * whether it is the winner.\n\nIf you paste any real `GtInputParser` example from your image, I can then tighten this skeleton to use **exactly** the same API (match objects, priorities, registry hooks) so it integrates cleanly into the global chain.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:57:07.821599+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T06:57:07.821599+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "n80vPSD/DQCD+MwHCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### How to proceed"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T06:54:46.523399+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T07:08:33.662236+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "gtDescription, registerOn:, exampleEvaluateWowSpecOnHome, parse:"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "69edc79d-1fff-0d00-ab3b-32d40454cd63"
+	}
+}
