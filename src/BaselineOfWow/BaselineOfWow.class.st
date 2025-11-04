@@ -7,7 +7,5 @@ Class {
 { #category : #baseline }
 BaselineOfWow >> baseline: spec [
 	<baseline>
-		^ spec for: #common do: [
-			spec package: 'Wow'
-		]
+	^ spec for: #common do: [ spec package: 'Wow' ]
 ]
