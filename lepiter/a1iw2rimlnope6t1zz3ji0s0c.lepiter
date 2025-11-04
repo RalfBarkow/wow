@@ -1,0 +1,150 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:10:43.69018+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:10:43.69018+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "p4sfyCP/DQC26wlABZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here’s a do-it chunk that lets **WowDitaBuild** ask the **codebase-locator agent** (`WowCodebaseLocator`) instead of hard-coding any paths. [chatgpt](https://chatgpt.com/c/6909b0e1-59f8-8325-8d7d-19c34859be15)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:10:53.430334+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:10:53.430334+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "pDC0yCP/DQC28xT9BZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "It also creates a first stub of `WowCodebaseLocator` so the “[[codebase-locator]]” agent has a concrete class to refine later."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:09:55.416692+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:10:53.554215+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rv4+xSP/DQC2pOvABZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```smalltalk\n\"Do-it: introduce WowCodebaseLocator and make WowDitaBuild\n ask it for the DITA paths instead of assuming a repo layout.\"\n\n| locatorClass buildClass builderClass |\n\n\"--- Codebase locator for WOW ---\"\nlocatorClass := Smalltalk at: #WowCodebaseLocator ifAbsent: [\n\tObject subclass: #WowCodebaseLocator\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Infra' ].\n\nlocatorClass class\n\tcompile:\n'wowDitaProjectDir\n\t\"Return the root directory of the WOW DITA project.\n\t Initial stub implementation.\n\t The codebase-locator agent is expected to refine this\n\t (e.g., by using git roots / workspace config).\"\n\n\t^ FileLocator home / ''workspace/wow/dita'''\n\tclassified: 'paths'.\n\nlocatorClass class\n\tcompile:\n'wowPositionPaperDitamap\n\t\"Location of the main DITA map for the WOW position paper.\"\n\n\t^ self wowDitaProjectDir / ''src/dita/wow-position.ditamap'''\n\tclassified: 'paths'.\n\n\n\"--- External process runner ---\"\nbuilderClass := Smalltalk at: #GtExternalProcessBuilder ifAbsent: [\n\t^ self error: 'GtExternalProcessBuilder (gtoolkit-external-process) not available in this image' ].\n\n\n\"--- WOW DITA build helper ---\"\nbuildClass := Smalltalk at: #WowDitaBuild ifAbsent: [\n\tObject subclass: #WowDitaBuild\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Tag' ].\n\nbuildClass class\n\tcompile:\n'buildPositionPaperPdf\n\t\"Build the WOW position paper PDF with DITA-OT.\n\t Paths come from WowCodebaseLocator; process execution from\n\t gtoolkit-external-process.\"\n\n\t| workingDir inputMap outputDir builder output |\n\n\tworkingDir := WowCodebaseLocator wowDitaProjectDir.\n\tinputMap := WowCodebaseLocator wowPositionPaperDitamap.\n\toutputDir := workingDir / ''build/pdf''.\n\toutputDir ensureCreateDirectory.\n\n\tbuilder := ', builderClass name ,' new.\n\toutput := builder\n\t\tcommand: ''dita'';\n\t\targ: ''-i'';\n\t\targ: inputMap fullName;\n\t\targ: ''-f'';\n\t\targ: ''pdf'';\n\t\targ: ''-o'';\n\t\targ: outputDir fullName;\n\t\toutput.\n\n\t^ output'\n\tclassified: 'building'.\n```\n\nCall it from a Playground like:\n\n```smalltalk\nWowDitaBuild buildPositionPaperPdf\n```\n\nNow all layout knowledge lives in `WowCodebaseLocator` (where the codebase-locator agent can later replace the stub `wowDitaProjectDir` / `wowPositionPaperDitamap` with a proper git-root or workspace-aware implementation).\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T11:09:55.416632+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T11:09:55.416632+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "unnamedPage",
+		"defaultTitle" : "Page"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "ccfb3ec5-23ff-0d00-b6a3-506c059fa0a9"
+	}
+}

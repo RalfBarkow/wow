@@ -1,0 +1,293 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:45:59.83255+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:48:19.543951+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FbKtbyP/DQC06KQnBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here’s a do-it chunk that rewrites {{gtMethod:WowDitaBuild>>buildPositionPaperPdf}} to use **gtoolkit-external-process** (`GtExternalProcessBuilder`) instead of `OSSubprocess` / UnixOSProcess. [chatgpt](https://chatgpt.com/c/6909b0e1-59f8-8325-8d7d-19c34859be15)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:54:29.399571+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:54:29.399571+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "kxINjiP/DQC12KNRBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paste this into a Pharo snippet / Playground and **do it**:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:54:39.030248+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T11:01:56.961627+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GgygjiP/DQC13TZPBZ+gqQ=="
+				},
+				"code" : "\"Do-it: define WowDitaBuild class>>buildPositionPaperPdf\n using gtoolkit-external-process\"\n\n| cls builderClass |\n\ncls := Smalltalk at: #WowDitaBuild ifAbsent: [\n    Object subclass: #WowDitaBuild\n        instanceVariableNames: ''\n        classVariableNames: ''\n        package: 'Wow-Tag' ].\n\nbuilderClass := Smalltalk at: #GtExternalProcessBuilder ifAbsent: [\n    ^ self error: 'GtExternalProcessBuilder (gtoolkit-external-process) not available in this image' ].\n\ncls class\n    compile:\n'buildPositionPaperPdf\n    \"Build the WOW position paper PDF with DITA-OT.\n     Assumes the repo layout:\n       ~/workspace/wow/dita/src/dita/wow-position.ditamap\n     and that ''dita'' is on PATH from the Nix dev shell.\"\n\n    | workingDir inputMap outputDir builder output |\n\n    workingDir := FileLocator home / ''workspace/wow/dita''.\n\n    inputMap := (workingDir / ''src/dita/wow-position.ditamap'') fullName.\n    outputDir := (workingDir / ''build/pdf'') fullName.\n    (workingDir / ''build/pdf'') ensureCreateDirectory.\n\n    builder := ', builderClass name ,' new.\n    output := builder\n        command: ''dita'';\n        arg: ''-i'';\n        arg: inputMap;\n        arg: ''-f'';\n        arg: ''pdf'';\n        arg: ''-o'';\n        arg: outputDir;\n        output.\n\n    ^ output'\n    classified: 'building'.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T10:45:42.640817+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T10:59:27.154942+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "7GSnbiP/DQC04EcGBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "```smalltalk\nWowDitaBuild buildPositionPaperPdf\n```\n\nfrom inside GT (with the Nix shell providing `dita` on the PATH), and it will use **gtoolkit-external-process** instead of the old OSSubprocess/UnixOSProcess path.\n"
+						},
+						{
+							"__type" : "pharoSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T10:56:43.885732+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T11:12:14.507622+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "1DARliP/DQC1+xh5BZ+gqQ=="
+							},
+							"code" : "'/Users/rgb/workspace/wow/src/dita/wow-position.ditamap' asFileReference"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:49:28.557737+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:49:28.557737+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "JpcefCP/DQC1cILfBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "After this, you can run:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:51:12.915019+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T10:51:21.57155+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "hvpWgiP/DQC1eMj2BZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "See {{gtClass:WowDitaBuild}}"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T10:47:34.509692+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T10:47:34.509692+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "buildPositionPaperPdf"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "6262a76e-23ff-0d00-b4df-1a9d059fa0a9"
+	}
+}

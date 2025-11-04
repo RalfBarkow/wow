@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="conclusion">
+  <title>Conclusion</title>
+  <body>
+    <p>
+      <!-- Wrap up the positions and hint at future work / tools -->
+      By aligning topic maps, narrative documents, and tooling such as
+      DITA-OT, we prototype infrastructures that respect knowledge as a
+      human practice rather than a mere data flow.
+    </p>
+  </body>
+</topic>

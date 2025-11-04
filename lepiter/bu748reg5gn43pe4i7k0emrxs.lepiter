@@ -1,0 +1,286 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:23:36.896621+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:23:36.896621+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "4dZ6ciH/DQCJJcw0CtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Perfect — the screenshot shows the `#canHandle:` DNU (“did not understand”) is happening because your **instance of `GtWowSpecInputParser`** doesn’t actually implement it — GT has the class compiled but with the method either\n\n* not yet installed in the instance side (e.g. accidentally compiled on the class side), or\n* compiled into another package or nil class reference.\n\nHere’s a **safe do-it** to ensure the instance side method `canHandle:` exists correctly on `GtWowSpecInputParser`."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:24:27.89354+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:24:27.89354+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zfeEdSH/DQCJTAiFCtT4xw=="
+				},
+				"code" : "\"Do-it: recompile the instance-side method canHandle: for GtWowSpecInputParser\n to fix DNU (did not understand) seen in exampleEvaluateWowSpecOnHome\"\n\nparserClass := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n\tGtInputParser subclass: #GtWowSpecInputParser\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ]."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:24:10.850448+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:24:27.908266+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "+e+AdCH/DQCJOwYgCtT4xw=="
+				},
+				"code" : "parserClass\n\tcompile: 'canHandle: aGtInput\n(aGtInput isKindOf: GtInputFile) ifFalse: [ ^ false ].\n| fileRef fileName segments contents hasWowMarker |\nfileRef := aGtInput fileReference.\nfileRef ifNil: [ ^ false ].\nfileName := fileRef basename.\n((fileName = ''SPEC.md'')\n    or: [ fileName endsWith: ''-SPEC.md'' ]) ifFalse: [ ^ false ].\nsegments := fileRef path segments.\n(segments anySatisfy: [ :each | each asLowercase = ''wow'' ]) ifFalse: [ ^ false ].\ncontents := fileRef readStreamDo: [ :str | str upToEnd ].\nhasWowMarker := (contents includesSubstring: ''WOW–Narrative Paths'')\n    or: [ contents includesSubstring: ''WOW - Narrative Paths'' ]\n    or: [ contents includesSubstring: ''# WOW SPEC'' ].\n^ hasWowMarker'\n\tclassified: 'matching'.\n\n"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:23:43.164729+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:24:10.879517+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "eoHaciH/DQCJKuFRCtT4xw=="
+				},
+				"code" : "\"Verify it’s on the instance side\"\nparserClass compiledMethodAt: #canHandle: ifAbsent: [ self error: 'still missing' ]."
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:37:36.631475+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:37:36.631475+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "uySIpCH/DQCJUyzeCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "✅ **What this does**\n\n* Ensures `canHandle:` is compiled on the **instance side** of `GtWowSpecInputParser`.\n* It’s identical in logic to your previous version but now definitely lives in the right place.\n* After running it, re-evaluate\n\n  ```smalltalk\n  GtWowSpecInputParser exampleEvaluateWowSpecOnHome\n  ```"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:37:41.171318+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:37:43.787982+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xnjNpCH/DQCJWCpOCtT4xw=="
+				},
+				"code" : "GtWowSpecInputParser exampleEvaluateWowSpecOnHome\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:23:24.259164+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:37:36.683517+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "mwe6cSH/DQCJFjnnCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "  — the DNU should be gone, and you should either get the parsed dictionary or the “does not recognise this file” string.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T08:23:24.259112+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T08:23:24.259112+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "unnamedPage",
+		"defaultTitle" : "Page"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "f004ba71-21ff-0d00-8915-8f740ad4f8c7"
+	}
+}

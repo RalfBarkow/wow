@@ -1,0 +1,412 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:32:42.013006+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:33:55.240953+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "j0uMaSL/DQCmdmWqBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "GT is basically telling you:\n\n> “I’m trying to load a class `GtWowSpecInputParser`, but its superclass `GtInputParser` does not exist in this image. So I’ll stop – the package is UNKNOWN and I can’t load these definitions.”\n\nSo this isn’t a git problem, it’s a **missing-dependency / too-eager Lepiter snippet** problem. [chatgpt](https://chatgpt.com/g/g-p-6909b09522208191be66f4e92c86c8b7-dita-ot/c/6909b0e1-59f8-8325-8d7d-19c34859be15)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:34:04.434666+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:36:39.296662+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "XvN1biL/DQCmrr+wBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "In one of your WOW Lepiter pages you have a snippet like:\n\n```smalltalk\nGtInputParser subclass: #GtWowSpecInputParser\n    instanceVariableNames: ''\n    classVariableNames: ''\n    package: 'Wow-Input'.\n```\n\nWhen GT loads that page into an image **where `GtInputParser` is not present**, you get exactly this warning dialog and the class is not created.\n\nThis can happen if:\n\n* you open `wow` in a **plain Pharo** image (or GT-lite) that doesn’t include the input infrastructure, or\n* you’re in an older GT image that simply doesn’t have `GtInputParser` yet.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:36:39.286614+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:36:39.286614+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "k82wdyL/DQCnLjR7BZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Why this happens"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:32:51.855503+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:37:00.809823+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "QXsiaiL/DQCmfXYCBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "In a Playground, evaluate:\n\n```smalltalk\nSmalltalk at: #GtInputParser ifAbsent: [ #missing ].\n```\n\n* If you get `#missing` → the class is not loaded in this image, which explains the dialog.\n* If you get a class → then you’re in the “right” GT, and we should only make the snippet more defensive.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:37:00.80192+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:37:00.80192+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "bhP5eCL/DQCnOCaYBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### Quick check"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:34:23.735801+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:34:50.577049+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "GXacbyL/DQCmvCbQBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "### 1. Use WOW only in a GT image that has `GtInputParser`\n\nSimplest: open this repo in a full Glamorous Toolkit image (or load the GToolkit baseline that includes the input subsystem) so `GtInputParser` exists. Then the existing snippet will load fine and the warning disappears.\n\nThis is what you probably had when you *created* {{gtClass:GtWowSpecInputParser}}.\n"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:36:03.374371+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:36:03.374371+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "j9OMdSL/DQCnJ2lYBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "### 2. Make the WOW parser snippet defensive (recommended for cross-images)"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:32:56.428741+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T09:36:03.39062+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "CUNoaiL/DQCmhHx/BZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "Update the Lepiter snippet that defines `GtWowSpecInputParser` so it **doesn’t reference `GtInputParser` at compile time**, but looks it up dynamically:\n\n```smalltalk\n\"Do-it: define/extend GtWowSpecInputParser only if GtInputParser exists\"\n\n| superClass parserClass |\n\nsuperClass := Smalltalk at: #GtInputParser ifAbsent: [\n    \"We are in a non-GT image; skip installing the WOW parser.\"\n    ^ 'GtInputParser missing – skipping GtWowSpecInputParser definition'.\n].\n\nparserClass := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n    superClass subclass: #GtWowSpecInputParser\n        instanceVariableNames: ''\n        classVariableNames: ''\n        package: 'Wow-Input'\n].\n\nparserClass \"return the class so the snippet has a nice result\"\n```\n\nWhat this buys you:\n\n* In a **full GT image**: `GtInputParser` is found, the subclass is created, everything works and `gtInputWhyViewOn:` can see your parser.\n* In a **plain Pharo / minimal image**: the snippet just returns the message string, no class is created, and you **don’t** get the dependency warning dialog.\n\nYou can do the same trick for `GtWowInputFile` and any other GT-dependent helper classes.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:34:50.557154+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:34:50.557154+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "rLQ1cSL/DQCnCbuEBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "## Two ways to fix this"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:32:34.80949+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:38:23.097948+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "2WYeaSL/DQCmbgJ2BZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "If you’d like, next step I can:\n\n* give you a **full updated do-it chunk** that defines both `GtWowSpecInputParser` and `GtWowInputFile` using this pattern, so you can just replace the existing snippets in the relevant Lepiter pages and commit.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T09:37:18.933102+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T09:37:18.933102+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "missing"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "2a641e69-22ff-0d00-a66d-e932059fa0a9"
+	}
+}

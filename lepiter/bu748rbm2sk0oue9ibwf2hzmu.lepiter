@@ -1,0 +1,144 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:45:10.72794+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:45:21.0936+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "NYUF6SD/DQCGEWZDCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Context: {{gtMethod:GtWowSpecInputParser class>>#exampleEvaluateWowSpecOnHome}}"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:44:44.410398+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:44:44.410398+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "J+xz5yD/DQCGDBz0CtT4xw=="
+				},
+				"code" : "\n\"Do-it: fix GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome\n and instance>>canHandle:\"\n\ncls := Smalltalk at: #GtWowSpecInputParser.\n\ncls class\n    compile: 'exampleEvaluateWowSpecOnHome\n    <gtExample>\n    | fileRef input parser result |\n    fileRef := FileLocator home / ''workspace/wow/SPEC.md''.\n    input := GtInputFile new\n        fileReference: fileRef;\n        yourself.\n    parser := self new.\n    (parser canHandle: input)\n        ifFalse: [ ^ ''GtWowSpecInputParser does not recognise this file.'' ].\n    result := parser parse: input.\n    ^ result'\n    classified: 'examples'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:44:02.499893+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:53:04.255348+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "i3H05CD/DQCF0npMCtT4xw=="
+				},
+				"code" : "cls\n    compile: 'c aGtInput\n    (aGtInput isKindOf: GtInputFile) ifFalse: [ ^ false ].\n    | fileRef fileName segments contents hasWowMarker |\n    fileRef := aGtInput fileReference.\n    fileName := fileRef basename.\n    ((fileName = ''SPEC.md'')\n        or: [ fileName endsWith: ''-SPEC.md'' ]) ifFalse: [ ^ false ].\n    segments := fileRef path segments.\n    (segments anySatisfy: [ :each | each asLowercase = ''wow'' ]) ifFalse: [ ^ false ].\n    contents := fileRef readStreamDo: [ :str | str upToEnd ].\n    hasWowMarker := (contents includesSubstring: ''WOW–Narrative Paths'')\n        or: [ contents includesSubstring: ''WOW - Narrative Paths'' ]\n        or: [ contents includesSubstring: ''# WOW SPEC'' ].\n    ^ hasWowMarker'\n    classified: 'matching'.\n\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T07:44:54.229276+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T07:44:54.229276+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "exampleEvaluateWowSpecOnHome"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "a66cf4e4-20ff-0d00-85d1-0f160ad4f8c7"
+	}
+}

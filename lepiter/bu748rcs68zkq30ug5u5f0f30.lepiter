@@ -1,0 +1,147 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:51:08.568853+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:51:08.568853+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "QbFZ/iD/DQCGe6gyCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "The error occurs because `fileRef` is `nil` when trying to call `readStreamDo:`. This happens because the `fileReference` of the `GtInputFile` instance might not be properly initialized. Here's the fix:\n\n1. **Ensure `fileReference` is set** in the example method.\n2. **Add a nil check** in `canHandle:` to safely handle missing file references.\n\nHere are the corrected code snippets:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:51:23.598185+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:51:36.067368+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "lxE//yD/DQCGh2tKCtT4xw=="
+				},
+				"code" : "(LePage named: 'exampleEvaluateWowSpecOnHome')\n\taddSnippet: (LeTextSnippet new\n\t\tstring: 'Context: {{gtMethod:GtWowSpecInputParser class>>#exampleEvaluateWowSpecOnHome}}';\n\t\tyourself);\n\taddSnippet: (LePharoSnippet new\n\t\tcode: '\n\"Do-it: fix GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome\n and instance>>canHandle:\"\n\ncls := Smalltalk at: #GtWowSpecInputParser.\n\ncls class\n    compile: ''exampleEvaluateWowSpecOnHome\n    <gtExample>\n    | fileRef input parser result |\n    fileRef := FileLocator home / ''''workspace/wow/SPEC.md''''.\n    input := GtInputFile new\n        fileReference: fileRef;\n        yourself.\n    parser := self new.\n    (parser canHandle: input)\n        ifFalse: [ ^ ''''GtWowSpecInputParser does not recognise this file.'''' ].\n    result := parser parse: input.\n    ^ result''\n    classified: ''examples''.';\n\t\tyourself);\n\taddSnippet: (LePharoSnippet new\n\t\tcode: 'cls\n    compile: ''canHandle: aGtInput\n    (aGtInput isKindOf: GtInputFile) ifFalse: [ ^ false ].\n    | fileRef fileName segments contents hasWowMarker |\n    fileRef := aGtInput fileReference.\n    \"Add nil check for fileReference\"\n    fileRef ifNil: [ ^ false ].\n    fileName := fileRef basename.\n    ((fileName = ''''SPEC.md'''')\n        or: [ fileName endsWith: ''''-SPEC.md'''' ]) ifFalse: [ ^ false ].\n    segments := fileRef path segments.\n    (segments anySatisfy: [ :each | each asLowercase = ''''wow'''' ]) ifFalse: [ ^ false ].\n    contents := fileRef readStreamDo: [ :str | str upToEnd ].\n    hasWowMarker := (contents includesSubstring: ''''WOW–Narrative Paths'''')\n        or: [ contents includesSubstring: ''''WOW - Narrative Paths'''' ]\n        or: [ contents includesSubstring: ''''# WOW SPEC'''' ].\n    ^ hasWowMarker''\n    classified: ''matching''.\n\n';\n\t\tyourself);\n\tyourself"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:50:50.699107+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:51:18.497979+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "lxFJ/SD/DQCGcwDmCtT4xw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "**Key Changes:**\n1. Added `fileRef ifNil: [ ^ false ]` in `canHandle:` to handle cases where `fileReference` might be `nil`.\n2. Ensured the example properly initializes the `GtInputFile` with a valid `fileReference`.\n\nThis should resolve the \"`#readStream was sent to nil`\" error by checking for a valid file reference before attempting to read from it."
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T07:51:06.533392+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T07:51:06.533392+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Fixing nil fileReference error in Pharo code"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "5c0f49fd-20ff-0d00-8672-083d0ad4f8c7"
+	}
+}

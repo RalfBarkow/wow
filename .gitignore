@@ -12,6 +12,9 @@ result-*
 # Local DITA-OT toolkit copy
 .dita-ot/
 
+# Build outputs (generated PDFs, etc.)
+build/
+
 # macOS
 .DS_Store
 

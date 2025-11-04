@@ -1,0 +1,320 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:59:29.234862+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:05:31.942375+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Nt7fgQz+DQCGQ//2AnVkMg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "You’re missing the **class-side** helper on {{gtClass:GtInputParser}}.  See {{gtMethod:GtInputParser class>>#bytesLookBinary:}}\nAdd it (and keep the UTF-8 fallback handy) with this tiny Do-it:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-28T21:42:52.169413+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-28T21:42:58.682763+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vZXyy5/+DQC/jEY2BXypWg=="
+				},
+				"code" : "Parser := Smalltalk at: #GtInputParser ifAbsent: [ nil ].\nParser ifNil: [ ^ 'GtInputParser not found' ]."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-28T21:42:45.525988+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-28T21:42:52.178802+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "zCyNy5/+DQC/hYnSBXypWg=="
+				},
+				"code" : "\"Binary heuristic: NUL or >20% control chars → binary\"\nParser class compile:\n'bytesLookBinary: bytes\n\tbytes isNil ifTrue: [ ^ true ].\n\tbytes isEmpty ifTrue: [ ^ false ].\n\t(bytes anySatisfy: [ :b | b = 0 ]) ifTrue: [ ^ true ].\n\t| nonPrintable total |\n\tnonPrintable := 0.\n\ttotal := bytes size asFloat.\n\tbytes do: [ :b |\n\t\t((b < 9) or: [ (b between: 14 and: 31) or: [ b = 127 ] ])\n\t\t\tifTrue: [ nonPrintable := nonPrintable + 1 ] ].\n\t^ (nonPrintable / total) > 0.2'\nclassified: 'utils'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T14:59:39.909108+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-28T21:42:45.538041+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "LsSCggz+DQCGT6CkAnVkMg=="
+				},
+				"code" : "\"UTF-8 decode with Latin-1-ish fallback (safe to recompile if it already exists)\"\nParser class compile:\n'utf8OrLatin1StringFromBytes: bytes\n\t| enc |\n\tenc := Smalltalk at: #ZnUTF8Encoder ifAbsent: [ nil ].\n\tenc ifNotNil: [\n\t\t^ [ enc new decodeBytes: bytes ]\n\t\t\ton: Error do: [ String streamContents: [ :out | bytes do: [ :b | out nextPut: (Character value: (b min: 255)) ] ] ] ].\n\t^ String streamContents: [ :out | bytes do: [ :b | out nextPut: (Character value: (b min: 255)) ] ]'\nclassified: 'utils'.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:01:38.339094+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:01:38.339094+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "xdeRiQz+DQCHB+pRAnVkMg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Quick sanity check:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:03:40.787722+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:03:40.787722+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Oj7ekAz+DQCHfsvAAnVkMg=="
+				},
+				"code" : "GtInputParser bytesLookBinary: #[0 65 66].   \"→ true\""
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:01:48.503187+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:03:40.798498+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "y/Qsigz+DQCHETUCAnVkMg=="
+				},
+				"code" : "GtInputParser bytesLookBinary: 'hello' asByteArray.  \"→ false\"\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:01:41.896952+02:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-10-21T15:01:41.896952+02:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "r0+hgQz+DQCGO1daAnVkMg=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : ""
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-21T15:00:25.73464+02:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-10-21T15:00:25.73464+02:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "GtInputParser"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "a34ba181-0cfe-0d00-863a-9c8602756432"
+	}
+}

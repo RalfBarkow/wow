@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:49:42.059077+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:50:20.883073+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "ivxYpiL/DQCoCoTRBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "```smalltalk\n\"Do-it: create a minimal GtInputParser class so GtWowSpecInputParser has a superclass.\"\n\n| parserClass |\nparserClass := Smalltalk at: #GtInputParser ifAbsent: [\n\tObject subclass: #GtInputParser\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\nparserClass class\n\tcompile: 'gtDescription\n\t^ ''Abstract input parser. Subclasses implement #canHandle: and #parse: for a given kind of input.'''\n\tclassified: 'documentation'.\n\nparserClass\n\tcompile: 'canHandle: aGtInput\n\t\"Default: do not handle anything. Subclasses override.\"\n\t^ false'\n\tclassified: 'matching'.\n\nparserClass\n\tcompile: 'parse: aGtInput\n\t\"Default: return the input unchanged. Subclasses override.\"\n\t^ aGtInput'\n\tclassified: 'parsing'.\n```\n\nFor **[[code-locator]]**: it should now record that {{gtClass:GtInputParser}} is defined in the GT image (package `Wow-Input`) and, when scanning external codebases, treat any class / type / symbol named `GtInputParser` as a potential integration point (e.g. in a future GT source repo).\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T09:49:42.058998+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T09:49:42.058998+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "unnamedPage",
+		"defaultTitle" : "Page"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "84f958a6-22ff-0d00-a809-3d12059fa0a9"
+	}
+}

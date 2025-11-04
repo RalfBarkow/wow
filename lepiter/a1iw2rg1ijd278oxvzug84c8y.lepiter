@@ -1,0 +1,73 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:42:24.476381+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T09:42:26.428127+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "NwFEjCL/DQCnYYjdBZ+gqQ=="
+				},
+				"code" : "\"Do-it for pharo-code-emitter:\n clean up #canHandle: and fix exampleEvaluateWowSpecOnHome.\"\n\n| parserClass wowInputClass |\n\n\"1. Ensure the parser class exists\"\nparserClass := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n\tGtInputParser subclass: #GtWowSpecInputParser\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\n\"2. Ensure the helper input class exists and understands #fileReference\"\nwowInputClass := Smalltalk at: #GtWowInputFile ifAbsent: [\n\tGtInputFile subclass: #GtWowInputFile\n\t\tinstanceVariableNames: 'fileReference'\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\nwowInputClass class\n\tcompile: 'onFileReference: aFileReference\n\t^ self new\n\t\tfileReference: aFileReference;\n\t\tyourself'\n\tclassified: 'instance creation'.\n\nwowInputClass\n\tcompile: 'fileReference\n\t^ fileReference'\n\tclassified: 'accessing'.\n\nwowInputClass\n\tcompile: 'fileReference: aFileReference\n\tfileReference := aFileReference'\n\tclassified: 'accessing'.\n\n\n\"3. Make sure #canHandle: is an *instance* method, not a class method\"\n\nparserClass class\n\tremoveSelector: #canHandle:\n\tifAbsent: [ ].\n\nparserClass\n\tcompile: 'canHandle: aGtInput\n(aGtInput isKindOf: GtInputFile) ifFalse: [ ^ false ].\n| fileRef fileName segments contents hasWowMarker |\nfileRef := aGtInput fileReference.\nfileRef ifNil: [ ^ false ].\nfileName := fileRef basename.\n((fileName = ''SPEC.md'')\n\tor: [ fileName endsWith: ''-SPEC.md'' ]) ifFalse: [ ^ false ].\nsegments := fileRef path segments.\n(segments anySatisfy: [ :each | each asLowercase = ''wow'' ]) ifFalse: [ ^ false ].\ncontents := fileRef readStreamDo: [ :str | str upToEnd ].\nhasWowMarker := (contents includesSubstring: ''WOW–Narrative Paths'')\n\tor: [ contents includesSubstring: ''WOW - Narrative Paths'' ]\n\tor: [ contents includesSubstring: ''# WOW SPEC'' ].\n^ hasWowMarker'\n\tclassified: 'matching'.\n\n\n\"4. Fix the example to use GtWowInputFile and the instance-side #canHandle:\"\n\nparserClass class\n\tcompile: 'exampleEvaluateWowSpecOnHome\n<gtExample>\n| fileRef input parser result |\nfileRef := FileLocator home / ''workspace/wow/SPEC.md''.\ninput := GtWowInputFile onFileReference: fileRef.\nparser := self new.\n(parser canHandle: input)\n\tifFalse: [ ^ ''GtWowSpecInputParser does not recognise this file.'' ].\nresult := parser parse: input.\n^ result'\n\tclassified: 'examples'.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T09:42:24.476335+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T09:42:24.476335+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "unnamedPage",
+		"defaultTitle" : "Page"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "02ff438c-22ff-0d00-a760-2316059fa0a9"
+	}
+}

@@ -1,0 +1,141 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:00:22.562153+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:00:22.562153+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "j/peHyH/DQCHYcWwCtT4xw=="
+				},
+				"code" : "\n\"Do-it: fix GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome\n and instance>>canHandle: using compile:classified: on a non-nil class.\"\n\ncls := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n    GtInputParser subclass: #GtWowSpecInputParser\n        instanceVariableNames: ''\n        classVariableNames: ''\n        package: 'Wow-Input' ]."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:00:28.380708+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:00:28.380708+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "CsS3HyH/DQCHaC8FCtT4xw=="
+				},
+				"code" : "cls class\n    compile: 'exampleEvaluateWowSpecOnHome\n<gtExample>\n| fileRef input parser result |\nfileRef := FileLocator home / ''workspace/wow/SPEC.md''.\ninput := GtInputFile onFileReference: fileRef.\nparser := self new.\n(parser canHandle: input)\n    ifFalse: [ ^ ''GtWowSpecInputParser does not recognise this file.'' ].\nresult := parser parse: input.\n^ result'\n    classified: 'examples'."
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T07:59:48.785859+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:00:28.393533+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "FJ9bHSH/DQCHHYeyCtT4xw=="
+				},
+				"code" : "cls\n    compile: 'canHandle: aGtInput\n(aGtInput isKindOf: GtInputFile) ifFalse: [ ^ false ].\n| fileRef fileName segments contents hasWowMarker |\nfileRef := aGtInput fileReference.\nfileRef ifNil: [ ^ false ].\nfileName := fileRef basename.\n((fileName = ''SPEC.md'')\n    or: [ fileName endsWith: ''-SPEC.md'' ]) ifFalse: [ ^ false ].\nsegments := fileRef path segments.\n(segments anySatisfy: [ :each | each asLowercase = ''wow'' ]) ifFalse: [ ^ false ].\ncontents := fileRef readStreamDo: [ :str | str upToEnd ].\nhasWowMarker := (contents includesSubstring: ''WOW–Narrative Paths'')\n    or: [ contents includesSubstring: ''WOW - Narrative Paths'' ]\n    or: [ contents includesSubstring: ''# WOW SPEC'' ].\n^ hasWowMarker'\n    classified: 'matching'.\n\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T11:19:09.579966+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T11:19:09.579966+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Fix GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome\n and instance>>canHandle: using compile:classified: on a non-nil class"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "b29c5b1d-21ff-0d00-871c-c0990ad4f8c7"
+	}
+}

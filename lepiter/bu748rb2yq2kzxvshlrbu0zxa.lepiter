@@ -1,0 +1,73 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:11:35.391948+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T08:11:44.411437+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HZN5RyH/DQCIF3suCtT4xw=="
+				},
+				"code" : "\n\"Do-it: introduce a small helper input class and fix\n GtWowSpecInputParser class>>exampleEvaluateWowSpecOnHome\"\n\n| parserClass inputClass |\n\n\"Ensure the parser class exists\"\nparserClass := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n\tGtInputParser subclass: #GtWowSpecInputParser\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\n\"Define a WOW-specific input file wrapper so we control the API\"\ninputClass := Smalltalk at: #GtWowInputFile ifAbsent: [\n\tGtInputFile subclass: #GtWowInputFile\n\t\tinstanceVariableNames: 'fileReference'\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\n\"Class-side constructor for our helper input\"\ninputClass class\n\tcompile: 'onFileReference: aFileReference\n\t^ self new\n\t\tfileReference: aFileReference;\n\t\tyourself'\n\tclassified: 'instance creation'.\n\n\"Instance-side accessors\"\ninputClass\n\tcompile: 'fileReference\n\t^ fileReference'\n\tclassified: 'accessing'.\n\ninputClass\n\tcompile: 'fileReference: aFileReference\n\tfileReference := aFileReference'\n\tclassified: 'accessing'.\n\n\n\"Fix exampleEvaluateWowSpecOnHome to use GtWowInputFile instead of a non-existent API\"\nparserClass class\n\tcompile: 'exampleEvaluateWowSpecOnHome\n<gtExample>\n| fileRef input parser result |\nfileRef := FileLocator home / ''workspace/wow/SPEC.md''.\ninput := GtWowInputFile onFileReference: fileRef.\nparser := self new.\n(parser canHandle: input)\n\tifFalse: [ ^ ''GtWowSpecInputParser does not recognise this file.'' ].\nresult := parser parse: input.\n^ result'\n\tclassified: 'examples'.\n\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T08:11:57.601757+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T08:11:57.601757+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : " exampleEvaluateWowSpecOnHome"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "de8f7947-21ff-0d00-8816-5e040ad4f8c7"
+	}
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map title="From Topicmaps to Narrative Documents">
+  <topicref href="intro.dita"/>
+  <topicref href="position-1.dita"/>
+  <topicref href="position-2.dita"/>
+  <topicref href="position-3.dita"/>
+  <topicref href="conclusion.dita"/>
+</map>

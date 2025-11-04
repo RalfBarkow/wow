@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="intro">
+  <title>Introduction</title>
+  <body>
+    <p>
+      This position paper argues that the distinction between knowledge and
+      information must be made explicit in the design of technical systems,
+      and that narrative documents are a primary site where this distinction
+      becomes operational.
+    </p>
+  </body>
+</topic>
