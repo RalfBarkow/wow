@@ -22,16 +22,34 @@ WowCodebaseLocator class >> wowDitaProjectDir [
 ]
 
 { #category : #paths }
+WowCodebaseLocator class >> wowDitaSrcDir [
+	"Directory that contains the DITA map(s)."
+
+	^ self wowWorkspaceRoot / 'src/dita'
+]
+
+{ #category : #paths }
+WowCodebaseLocator class >> wowLepiterDir [
+	^ self wowWorkspaceRoot / 'lepiter'
+]
+
+{ #category : #paths }
 WowCodebaseLocator class >> wowPositionPaperDitamap [
 	"Main DITA map for the WOW position paper:
-	 /Users/rgb/workspace/wow/src/dita/wow-position.ditamap"
+	   <wowWorkspaceRoot>/src/dita/wow-position.ditamap"
 
-	^ self wowWorkspaceRoot / 'src/dita/wow-position.ditamap'
+	^ self wowDitaSrcDir / 'wow-position.ditamap'
+]
+
+{ #category : #paths }
+WowCodebaseLocator class >> wowSpecMarkdown [
+	"Canonical WOW spec file:
+	   <wowWorkspaceRoot>/SPEC.md"
+	^ self wowWorkspaceRoot / 'SPEC.md'
 ]
 
 { #category : #paths }
 WowCodebaseLocator class >> wowWorkspaceRoot [
 	"Root of the wow git repo: /Users/rgb/workspace/wow"
-
 	^ FileLocator home / 'workspace/wow'
 ]

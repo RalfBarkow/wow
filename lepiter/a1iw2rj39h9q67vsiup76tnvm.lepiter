@@ -1,0 +1,188 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:49:27.777322+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:49:59.343+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "1/U5KSX/DQCTcy8LBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Let’s give `GtWowSpecInputParser` a real `canHandle:` (instance-side) and also a class-side forwarder so both styles work. [chatgpt](https://chatgpt.com/g/g-p-68cacb9c00a48191859996f22777f5d9-wow/c/6909e0fb-13b0-832a-b0de-4599a9afb0f9)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:50:13.047625+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:50:13.047625+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "S7zsKyX/DQCTwi+yBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "```smalltalk\n\"Do-it: fix GtWowSpecInputParser>>canHandle: (and class-side delegator)\"\n\n| cls |\n\ncls := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n\t^ self error: 'GtWowSpecInputParser not found in this image' ].\n\n\"Instance-side matching logic\"\ncls\n\tcompile:\n'canHandle: aGtInput\n\t\"Answer whether this parser can handle the given input.\n\tCurrently: recognize the WOW position paper DITA map.\"\n\n\t| fileRef |\n\t(aGtInput respondsTo: #fileReference) ifFalse: [ ^ false ].\n\n\tfileRef := aGtInput fileReference.\n\tfileRef ifNil: [ ^ false ].\n\n\t^ fileRef = WowCodebaseLocator wowPositionPaperDitamap'\n\tclassified: 'matching'.\n\n\"Class-side convenience (if examples send canHandle: to the class)\"\ncls class\n\tcompile:\n'canHandle: aGtInput\n\t^ self new canHandle: aGtInput'\n\tclassified: 'matching'.\n```\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:50:09.108612+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:50:09.108612+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GpqwKyX/DQCTu9PbBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paste this **do-it** into a Playground / Lepiter Pharo snippet and run it:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:49:20.795178+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:50:13.143566+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "k3LPKCX/DQCTa/VBBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Now:\n\n* `GtWowSpecInputParser new canHandle: someInput` works, and\n* `GtWowSpecInputParser canHandle: someInput` also works (via the delegating class method),\n\nso your example method can safely send `canHandle:` without hitting *Message not understood*.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T12:50:31.773595+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T12:50:31.773595+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "canHandle:"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "2270cf28-25ff-0d00-936a-bd7b059fa0a9"
+	}
+}

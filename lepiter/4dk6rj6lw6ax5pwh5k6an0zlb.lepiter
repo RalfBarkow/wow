@@ -1,0 +1,76 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:59:29.592942+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:59:32.335951+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "9fYYTSX/DQChKpC+D3LtSQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "You’re totally right: the parser should be about **`SPEC.md`**, not the DITA map. Let’s fix the misunderstanding and wire everything to the one-and-only project spec.\n\nBelow is a single **do-it** chunk that:\n\n* teaches `WowCodebaseLocator` where `SPEC.md` lives,\n* repoints `GtWowInputFile` to that spec file, and\n* updates `GtWowSpecInputParser>>canHandle:` + the example to use `SPEC.md`.\n\nPaste into a Playground / Lepiter Pharo snippet and *do it*:\n\n```smalltalk\n\"Do-it: make GtWowSpecInputParser work on SPEC.md instead of the DITA map\"\n\n| locatorClass wowInputFileClass parserClass |\n\n\n\"--- WowCodebaseLocator: add SPEC.md location ---\"\n\nlocatorClass := Smalltalk at: #WowCodebaseLocator ifAbsent: [\n\tObject subclass: #WowCodebaseLocator\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Infra' ].\n\nlocatorClass class\n\tcompile:\n'wowWorkspaceRoot\n\t\"Root of the wow git repo: /Users/rgb/workspace/wow\"\n\t^ FileLocator home / ''workspace/wow'''\n\tclassified: 'paths'.\n\nlocatorClass class\n\tcompile:\n'wowSpecMarkdown\n\t\"Canonical WOW spec file:\n\t   <wowWorkspaceRoot>/SPEC.md\"\n\t^ self wowWorkspaceRoot / ''SPEC.md'''\n\tclassified: 'paths'.\n\n\n\"--- GtWowInputFile: point to SPEC.md ---\"\n\nwowInputFileClass := Smalltalk at: #GtWowInputFile ifAbsent: [\n\t(Smalltalk at: #GtInputFile ifAbsent: [\n\t\tObject subclass: #GtInputFile\n\t\t\tinstanceVariableNames: 'fileReference'\n\t\t\tclassVariableNames: ''\n\t\t\tpackage: 'Wow-Input-Compat' ])\n\t\tsubclass: #GtWowInputFile\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\nwowInputFileClass class\n\tcompile:\n'wowSpecFileReference\n\t\"FileReference for the WOW SPEC.md.\"\n\t^ WowCodebaseLocator wowSpecMarkdown'\n\tclassified: 'paths'.\n\nwowInputFileClass class\n\tcompile:\n'onWowSpec\n\t\"GtWowInputFile wrapping SPEC.md.\"\n\t^ self onFileReference: self wowSpecFileReference'\n\tclassified: 'instance creation'.\n\n\n\"--- GtWowSpecInputParser: recognise SPEC.md ---\"\n\nparserClass := Smalltalk at: #GtWowSpecInputParser ifAbsent: [\n\t^ self error: 'GtWowSpecInputParser not found in this image' ].\n\nparserClass\n\tcompile:\n'canHandle: aGtInput\n\t\"Answer whether this parser can handle the given input.\n\tFor now: the one canonical WOW SPEC.md file.\"\n\n\t| fileRef |\n\t(aGtInput respondsTo: #fileReference) ifFalse: [ ^ false ].\n\tfileRef := aGtInput fileReference.\n\tfileRef ifNil: [ ^ false ].\n\n\t^ fileRef = WowCodebaseLocator wowSpecMarkdown'\n\tclassified: 'matching'.\n\nparserClass class\n\tcompile:\n'canHandle: aGtInput\n\t^ self new canHandle: aGtInput'\n\tclassified: 'matching'.\n\n\n\"--- Example: fail loudly if SPEC.md is not recognised ---\"\n\nparserClass class\n\tcompile:\n'exampleEvaluateWowSpecOnHome\n\t<gtExample>\n\t| input parser result |\n\n\tinput := GtWowInputFile onWowSpec.\n\tparser := self new.\n\n\t(parser canHandle: input)\n\t\tifFalse: [ self error: ''GtWowSpecInputParser is expected to recognise SPEC.md but did not.'' ].\n\n\tresult := parser parse: input.\n\t^ result'\n\tclassified: 'examples'.\n```\n\nNow:\n\n* `GtWowSpecInputParser` really targets **`SPEC.md`**.\n* The example will go **red** if the parser doesn’t recognise that file (instead of “green but with a sad string”).\n* `GtWowInputFile onWowSpec` is your canonical “wrap the project spec” helper, and any future heuristics can still be implemented in `canHandle:` without touching call sites.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T13:00:19.316478+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T13:00:19.316478+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "exampleEvaluateWowSpecOnHome, SPEC.md"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "2ff3184d-25ff-0d00-a129-2e1d0f72ed49"
+	}
+}

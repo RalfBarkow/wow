@@ -1,0 +1,526 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:27:01.372473+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:27:25.090746+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "5HT52CT/DQCRUEFFBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Nice catch with that undeclared `GtInputFile` 👀\nLet’s give the 🧪 **pharo-code-emitter** and 🔍 **codebase-locator** something solid to work with. [chatgpt](https://chatgpt.com/g/g-p-68cacb9c00a48191859996f22777f5d9-wow/c/6909e0fb-13b0-832a-b0de-4599a9afb0f9)"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:27:38.090657+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:27:38.090657+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "vrUp2yT/DQCRdUsOBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Below is a **single do-it chunk** that:\n\n1. Provides a **safe compatibility `GtInputFile`** (only if it doesn’t already exist, and without touching an existing one).\n2. Defines **`GtWowInputFile`** as a thin wrapper around `GtInputFile`.\n3. Uses **`WowCodebaseLocator`** for paths (no hard-coded `/Users/rgb/...` anymore).\n4. Adds a **GT example** so you can drive it from the inspector / examples.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:35:34.255029+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:38:57.970069+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "5nGL9yT/DQCSHHe4BZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "See {{gtClass:WowCodebaseLocator}} and {{gtClass:GtInputFile}}"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:27:56.519042+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:31:38.435638+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "/+tC3CT/DQCRfMVgBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "```smalltalk\n\"Do-it: provide GtInputFile (compat) and GtWowInputFile,\n wired to WowCodebaseLocator.\"\n\n| locatorClass inputFileClass wowInputFileClass |\n\n\n\"--- WowCodebaseLocator (paths for wow) ---\"\n\nlocatorClass := Smalltalk at: #WowCodebaseLocator ifAbsent: [\n\tObject subclass: #WowCodebaseLocator\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Infra' ].\n\nlocatorClass class\n\tcompile:\n'wowWorkspaceRoot\n\t\"Root of the wow git repo, adjust here if layout changes.\"\n\t^ FileLocator home / ''workspace/wow'''\n\tclassified: 'paths'.\n\nlocatorClass class\n\tcompile:\n'wowLepiterDir\n\t^ self wowWorkspaceRoot / ''lepiter'''\n\tclassified: 'paths'.\n\nlocatorClass class\n\tcompile:\n'wowDitaSrcDir\n\t\"Directory that contains the DITA map(s).\"\n\t^ self wowWorkspaceRoot / ''src/dita'''\n\tclassified: 'paths'.\n\nlocatorClass class\n\tcompile:\n'wowPositionPaperDitamap\n\t\"Main DITA map for the WOW position paper:\n\t   <wowWorkspaceRoot>/src/dita/wow-position.ditamap\"\n\t^ self wowDitaSrcDir / ''wow-position.ditamap'''\n\tclassified: 'paths'.\n\n\n\"--- GtInputFile (compat layer, only if missing) ---\"\n\ninputFileClass := Smalltalk at: #GtInputFile ifAbsent: [\n\tObject subclass: #GtInputFile\n\t\tinstanceVariableNames: 'fileReference'\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input-Compat' ].\n\n\"Make sure instances understand #fileReference / #fileReference:\"\n(inputFileClass includesSelector: #fileReference) ifFalse: [\n\tinputFileClass\n\t\tcompile:\n'fileReference\n\t^ fileReference'\n\t\tclassified: 'accessing' ].\n\n(inputFileClass includesSelector: #fileReference:) ifFalse: [\n\tinputFileClass\n\t\tcompile:\n'fileReference: aFileReference\n\tfileReference := aFileReference'\n\t\tclassified: 'accessing' ].\n\n(inputFileClass class includesSelector: #onFileReference:) ifFalse: [\n\tinputFileClass class\n\t\tcompile:\n'onFileReference: aFileReference\n\t^ self new\n\t\tfileReference: aFileReference;\n\t\tyourself'\n\t\tclassified: 'instance creation' ].\n\n\n\"--- GtWowInputFile (domain-specific input) ---\"\n\nwowInputFileClass := Smalltalk at: #GtWowInputFile ifAbsent: [\n\tinputFileClass subclass: #GtWowInputFile\n\t\tinstanceVariableNames: ''\n\t\tclassVariableNames: ''\n\t\tpackage: 'Wow-Input' ].\n\n\"Convenience for getting the WOW SPEC input\"\nwowInputFileClass class\n\tcompile:\n'wowSpecFileReference\n\t\"FileReference of the WOW position paper DITA map.\"\n\t^ WowCodebaseLocator wowPositionPaperDitamap'\n\tclassified: 'paths'.\n\nwowInputFileClass class\n\tcompile:\n'onWowSpec\n\t\"GtWowInputFile for the WOW SPEC DITA map.\"\n\t^ self onFileReference: self wowSpecFileReference'\n\tclassified: 'instance creation'.\n\nwowInputFileClass class\n\tcompile:\n'exampleWowSpecInput\n\t<gtExample>\n\t^ self onWowSpec'\n\tclassified: 'examples'.\n```\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:31:38.141095+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:31:38.141095+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "15t46ST/DQCR9I35BZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Paste this into a Playground / Lepiter Pharo snippet and *do it*:"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:30:16.505536+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:30:46.109275+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "8via5CT/DQCRnpUwBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "See {{gtClass:GtWowSpecInputParser}} Examples"
+						},
+						{
+							"__type" : "exampleSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:28:42.162637+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:28:42.162637+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "BWr73iT/DQCRi1F5BZ+gqQ=="
+							},
+							"exampleSelector" : "exampleEvaluateWowSpecOnHome",
+							"previewHeight" : 200,
+							"previewShowSelector" : "gtViewsFor:",
+							"exampleBehaviorName" : "GtWowSpecInputParser class",
+							"codeExpanded" : true,
+							"previewExpanded" : false,
+							"noCode" : false
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T12:34:17.058641+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T12:34:17.058641+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "DX7x8iT/DQCSFJnLBZ+gqQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "```smalltalk\nexampleEvaluateWowSpecOnHome\n\t<gtExample>\n\t| input parser result |\n\tinput := GtWowInputFile onWowSpec.\n\tparser := GtWowSpecInputParser new.\n\t(parser canHandle: input)\n\t\tifFalse: [ ^ ''GtWowSpecInputParser does not recognise this input.'' ].\n\tresult := parser parse: input.\n\t^ result\n```"
+									},
+									{
+										"__type" : "textSnippet",
+										"children" : {
+											"__type" : "snippets",
+											"items" : [ ]
+										},
+										"createEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"createTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T12:40:02.87678+01:00"
+											}
+										},
+										"editEmail" : {
+											"__type" : "email",
+											"emailString" : "<unknown>"
+										},
+										"editTime" : {
+											"__type" : "time",
+											"time" : {
+												"__type" : "dateAndTime",
+												"dateAndTimeString" : "2025-11-04T12:40:32.331419+01:00"
+											}
+										},
+										"uid" : {
+											"__type" : "uid",
+											"uidString" : "q0mOByX/DQCSnfSEBZ+gqQ=="
+										},
+										"paragraphStyle" : {
+											"__type" : "textStyle"
+										},
+										"string" : "See {{gtMethod:GtWowSpecInputParser class>>#exampleEvaluateWowSpecOnHome}} and {{gtClass:GtWowInputFile}}"
+									}
+								]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:33:56.276064+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:39:37.100751+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "RV608ST/DQCSA56wBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "* In your parser example you can now safely write:"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:34:04.830395+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:34:17.326761+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "Suk28iT/DQCSCqRUBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "* And anywhere else you need a generic input wrapper, you have a minimal, non-invasive `GtInputFile` that:\n\n  * exists only if the image doesn’t already define one, and\n  * plays nicely with `WowCodebaseLocator` via `GtWowInputFile`.\n"
+						},
+						{
+							"__type" : "textSnippet",
+							"children" : {
+								"__type" : "snippets",
+								"items" : [ ]
+							},
+							"createEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"createTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:26:49.445311+01:00"
+								}
+							},
+							"editEmail" : {
+								"__type" : "email",
+								"emailString" : "<unknown>"
+							},
+							"editTime" : {
+								"__type" : "time",
+								"time" : {
+									"__type" : "dateAndTime",
+									"dateAndTimeString" : "2025-11-04T12:34:05.12891+01:00"
+								}
+							},
+							"uid" : {
+								"__type" : "uid",
+								"uidString" : "83tD2CT/DQCRSL/gBZ+gqQ=="
+							},
+							"paragraphStyle" : {
+								"__type" : "textStyle"
+							},
+							"string" : "This keeps WOW self-contained but ready to migrate: if future GT images bring back / rename an official `GtInputFile`, you only need to adjust the `WowCodebaseLocator` + `GtWowInputFile` bits, not the entire codebase.\n"
+						}
+					]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:28:27.550296+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T12:28:27.550296+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Kmwc3iT/DQCRg86NBZ+gqQ=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "### How to use it"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T12:27:54.84+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T12:27:54.84+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "exampleWowSpecInput"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "d57943d8-24ff-0d00-9147-9b31059fa0a9"
+	}
+}
