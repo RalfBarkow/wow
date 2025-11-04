@@ -1,0 +1,73 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:20:03.990777+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:20:06.182269+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "RAVAbSb/DQCD4fjQAvernw=="
+				},
+				"code" : "#(\n  (project\n    (instances: #('dmx-platform' 'dmx-dita' ...))\n    (associations: #(project-runs-on project-has-doc ...)))\n  (runtime\n    (instances: #('DMX 5.3.5' 'DMX 5.0-beta-7-SNAPSHOT' ...))\n    (associations: #(project-runs-on integration-uses-runtime-or-component ...))\n  )\n  ...\n)\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T14:19:31.410697+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T14:19:31.410697+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Would like a simple data structure (even in Smalltalk) like:"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "27e14e6b-26ff-0d00-83d9-745702f7ab9f"
+	}
+}

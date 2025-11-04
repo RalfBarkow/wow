@@ -1,0 +1,150 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:11:53.78679+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:11:53.78679+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "JAwIUCb/DQCDhg/kAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here’s a first-cut list of “things that should exist as DMX topics” for DM6 Agenda — i.e. what deserves a node in the DMX backend, not just a note in GT or FedWiki. [chatgpt](https://chatgpt.com/g/g-p-6909f26ec0dc8191a7378ddc1c348dc0-dm6-agenda/c/6909f304-084c-8327-b877-e51ebda7ff66)\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:11:56.490191+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:11:56.490191+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "N1QxUCb/DQCDjc3rAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I’ll group them; within each group, think “topic type” in DMX with one or more instances.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:11:10.723542+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:11:56.648215+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HQJ3TSb/DQCDR5QtAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "---\n\n## 1. Core coordination\n\n1. **DM6 Agenda**\n2. **DM6 Agenda Version / Milestone** (e.g. “WOW 2025”, “MUDCon 2025”)\n\nThese are the central “hub” topics everything else hangs off.\n\n---\n\n## 2. Projects / repositories\n\nFor each actual code or doc repo, one topic:\n\n3. **Project: dmx-platform**\n4. **Project: dmx-dita**\n5. **Project: dmx-fedwiki**\n6. **Project: dmx-zettelkasten**\n7. **Project: wow** (position paper + DITA pipeline)\n8. **Project: gt4nix**\n9. **Project: dm6-elm**\n10. **Project: wiki-plugin-topicmap**\n11. **Project: other FedWiki plugins** (solo, graphviz, … as separate topics if relevant)\n12. **Project: DM6 Agenda meta-repo** (if/when you make one)\n\nOptional but useful per project:\n\n13. **Git repository** (with URL + local path)\n14. **Nix flake** / **DevShell** (if you want to model Nix explicitly)\n\n---\n\n## 3. Agents & roles\n\nEach agent you’ve named should be a topic (role/agent type):\n\n15. **Agent: codebase-locator**\n16. **Agent: docs-steward**\n17. **Agent: architecture-scribe**\n18. **Agent: runtime-orchestrator**\n19. **Agent: pharo-code-emitter**\n20. **Agent: web-search-researcher**\n21. **Agent: founder-mode / founder** (meta-role for orchestration)\n\nPlus more generic roles, if you want:\n\n22. **Role: Developer**\n23. **Role: Editor / Author**\n24. **Role: Product Owner / Maintainer**\n\nThese can be connected to projects (“agent X is responsible for Y”) and to tasks.\n\n---\n\n## 4. Runtimes & environments\n\nEach distinct runtime/config deserves its own topic:\n\n25. **Runtime: DMX 5.3.5**\n26. **Runtime: DMX 5.0-beta-7-SNAPSHOT** (historical but important for dmx-dita)\n27. **Runtime: GT (current image)**\n28. **Runtime: Nix shell – dmx-platform**\n29. **Runtime: Nix shell – dmx-dita**\n30. **Runtime: Nix shell – wow/dita-ot**\n31. **Runtime: Nix shell – gt4nix**\n32. **Runtime: Node/Elm toolchain**\n\nAnd specific **services / components** if needed:\n\n33. **Component: DITA-OT** (with version)\n34. **Component: SLF4J 2.0.9**\n35. **Component: dmx-dita-0.2.1.jar (wrapped)**\n36. **Component: dmx-dita-0.2.0.SNAPSHOT**\n\n---\n\n## 5. Specifications, docs & views\n\nTo connect your living documents and views:\n\n37. **Document: DM6 Agenda SPEC**\n38. **Document: DM6 Agenda IMPLEMENTATION_PLAN**\n39. **Document: DM6 Agenda WORKLOG / PROGRESS**\n\nPer project:\n\n40. **Document: WOW SPEC.md**\n41. **Document: DMX-DITA repomix summary**\n42. **Document: dmx-platform docs** (or finer-grained if needed)\n43. **Document: gt4nix docs**\n\nFrontends:\n\n44. **View: FedWiki page /view/dm6-agenda**\n45. **View: GT tools / inspectors (for DM6, WOW, DMX)**\n46. **View: Elm topic map** (DM6 topicmap renderer)\n\n---\n\n## 6. Integrations & pipelines\n\nThis is where DMX shines: model each integration as a topic you can hang problems/solutions on.\n\n47. **Integration: DMX ↔ DITA-OT (dmx-dita)**\n48. **Integration: DMX ↔ FedWiki (dmx-fedwiki)**\n49. **Integration: DMX ↔ Zettelkasten (dmx-zettelkasten)**\n50. **Integration: GT ↔ DMX (codebase-locator, agents)**\n51. **Integration: GT ↔ Nix (gt4nix)**\n52. **Integration: WOW ↔ DITA (position paper → PDF pipeline)**\n53. **Integration: DM6 ↔ Elm topicmap**\n54. **Integration: DM6 ↔ Linear / issue tracker** (if you want to pull tickets in)\n55. **Integration: DM6 ↔ GitHub** (repos, PRs, CI)\n\nEach integration topic can be linked to:\n\n* Involved projects\n* Runtimes/components\n* Known issues\n* Tasks / experiments\n\n---\n\n## 7. Tasks, issues, experiments\n\nFor agenda-style coordination you probably want:\n\n56. **Task** topics (generic type; one topic per task/ticket)\n57. **Experiment** topics (“try wrapping dmx-dita with SLF4J [1.7,3)” etc.)\n58. **Issue / Problem** topics (for runtime incompatibilities, build failures, etc.)\n59. **Decision** topics (recording design decisions, e.g. “we re-wrap dmx-dita instead of downgrading DMX”)\n\nThese can link to:\n\n* Projects / Integrations\n* Agents responsible\n* Relevant docs and commits\n* External tickets (Linear, GitHub issues)\n\n---\n\n## 8. Theoretical / conceptual topics\n\nBecause theory is first-class in your work, it should also live as topics:\n\n60. **Concept: Knowledge vs Information**\n61. **Concept: System / Environment (Luhmann)**\n62. **Concept: Zettelkasten**\n63. **Concept: Narrative Path**\n64. **Concept: Acyclicity / Condorcet paradox**\n65. **Concept: Observer / Observation**\n66. **Concept: Minimal Ontology**\n\nAnd key works / authors as topics:\n\n67. **Author: Niklas Luhmann**\n\n68. **Author: Christine Müller**\n\n69. **Author: Bruno Latour**\n\n70. **Author: Jack Park**\n\n71. **Author: Matthew Sotoudeh**\n\n72. **Work: WOW position paper**\n\n73. **Work: Luhmann – Vertrauen**\n\n74. **Work: Müller – Narrative Path**\n\nThese link to:\n\n* Projects they inform (WOW, DM6, Zettelkasten, etc.)\n* Decisions motivated by them.\n\n---\n\n## 9. External systems & tooling\n\nFinally, a small set of topics for the external “infrastructure”:\n\n75. **Service: GitHub**\n76. **Service: Linear**\n77. **Service: FedWiki (dm6.dreyeck.ch)**\n78. **Service: Nix cache / remote cache**\n79. **Service: DMX plugin download site**\n\nOptionally:\n\n80. **Account / Identity: Ralf Barkow** (linked to roles like Developer, Author, etc.)\n\n---\n\nIf you like this structure, next step could be:\n\n* I propose a *DMX topic type schema* (topic types + association types) for these groups, so you can actually create them in DMX with consistent types and associations.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T15:19:28.749714+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T15:19:28.749714+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "Things that should exist as DMX topics"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "e1fd764d-26ff-0d00-8346-60be02f7ab9f"
+	}
+}

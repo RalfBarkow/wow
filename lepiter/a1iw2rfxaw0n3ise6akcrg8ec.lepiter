@@ -51,7 +51,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T09:49:42.058998+01:00"
+			"dateAndTimeString" : "2025-11-04T15:21:41.395467+01:00"
 		}
 	},
 	"editEmail" : {
@@ -62,12 +62,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T09:49:42.058998+01:00"
+			"dateAndTimeString" : "2025-11-04T15:21:41.395467+01:00"
 		}
 	},
 	"pageType" : {
-		"__type" : "unnamedPage",
-		"defaultTitle" : "Page"
+		"__type" : "namedPage",
+		"title" : "Create a minimal GtInputParser class so GtWowSpecInputParser has a superclass"
 	},
 	"uid" : {
 		"__type" : "uuid",

@@ -1,0 +1,147 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:47:32.712841+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:47:32.712841+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "63mFzyb/DQCGkh1+Avernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Nice, let’s baptize one. I’ll call it **store-on-scribe** and let it own all Lepiter “Store on” replies.\n\nHere’s its spec as a `Store on` snippet:"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:47:44.853445+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:52:43.271057+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "HMY+0Cb/DQCGnoDrAvernw=="
+				},
+				"code" : "LePage unnamedPage\n\taddSnippet: (LeTextSnippet new\n\t\t\tstring: '# SPEC\nname: store-on-scribe\ndescription: Serializes agent outputs into Lepiter \"Store on\" LePage/LeTextSnippet snippets for DM6 Agenda.\nmodel: gpt-5-thinking\ninputs: codebase-locator, docs-steward, architecture-scribe, runtime-orchestrator, pharo-code-emitter\ntools: none\n\n';\n\t\t\tyourself);\n\taddSnippet: (LeTextSnippet new\n\t\t\tstring: '# Responsibilities';\n\t\t\taddSnippet: (LeTextSnippet new\n\t\t\t\t\tstring: '* Convert structured agent answers (types, instances, schemas, specs) into executable \"Store on\" code:\n  * `LePage ...`\n  * chained `addSnippet:` with `LeTextSnippet new`.\n* Preserve and enforce indentation / nesting conventions for Lepiter pages.\n* Wrap other agents'' prose into Markdown inside `string:` while keeping it syntactically valid Smalltalk.\n* Provide names for pages (`LePage dm6Agenda...`) when helpful, otherwise respect user-given names.\n* Act as the single source of truth for \"how we serialize DM6 knowledge into Lepiter\".';\n\t\t\t\t\tyourself);\n\t\t\tyourself);\n\taddSnippet: (LeTextSnippet new\n\t\t\tstring: '# Triggers';\n\t\t\taddSnippet: (LeTextSnippet new\n\t\t\t\t\tstring: '* User writes: `want: Store on` or similar (\"Store-on reply\", \"Store-on version\", etc.).\n* Other agents (docs-steward, architecture-scribe, runtime-orchestrator, pharo-code-emitter) hand off their conceptual answer and request a Store-on encoding.\n* When consolidating DM6 schemas/agents/specs into Lepiter from chat transcripts.';\n\t\t\t\t\tyourself);\n\t\t\tyourself);\n\taddSnippet: (LeTextSnippet new\n\t\t\tstring: '# Deliverables';\n\t\t\taddSnippet: (LeTextSnippet new\n\t\t\t\t\tstring: '* Smalltalk snippets starting with `LePage ...` followed by nested `addSnippet:` chains.\n* Syntactically valid, copy-pasteable \"do-its\" for GT / Lepiter.\n* Optionally, variant pages that act as templates for new agents or schemas (e.g., DMX schema definitions, agent specs).';\n\t\t\t\t\tyourself);\n\t\t\tyourself);\n\taddSnippet: (LeTextSnippet new\n\t\t\tstring: '# Out of scope';\n\t\t\taddSnippet: (LeTextSnippet new\n\t\t\t\t\tstring: '* Designing the content itself (hands off to:\n  * docs-steward for narrative text,\n  * architecture-scribe for schemas/associations,\n  * runtime-orchestrator for runtime steps,\n  * pharo-code-emitter for executable Smalltalk/Java/Nix).\n* Talking directly to DMX or GitHub; store-on-scribe is purely about Lepiter serialization.';\n\t\t\t\t\tyourself);\n\t\t\tyourself);\n\tyourself\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:47:09.52919+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:47:38.284995+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "pcQjzib/DQCGisIbAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "From now on, when you say something like **“want: Store on”**, I’ll let **store-on-scribe** “speak” and answer in this pattern.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T14:52:05.148017+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T14:52:05.148017+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "“want: Store on”"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "1fc223ce-26ff-0d00-8689-48d502f7ab9f"
+	}
+}

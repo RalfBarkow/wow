@@ -29,7 +29,7 @@
 					"__type" : "time",
 					"time" : {
 						"__type" : "dateAndTime",
-						"dateAndTimeString" : "2025-11-04T07:57:05.924124+01:00"
+						"dateAndTimeString" : "2025-11-04T15:20:04.201156+01:00"
 					}
 				},
 				"uid" : {
@@ -39,7 +39,7 @@
 				"paragraphStyle" : {
 					"__type" : "textStyle"
 				},
-				"string" : "The issue is that `cls` is `nil` because `GtWowSpecInputParser` class doesn't exist yet. We need to:\n\n1. **Create the class first** before compiling methods\n2. **Fix the fileReference setter** in the example method\n\nHere's the corrected code:"
+				"string" : "The issue is that `cls` is `nil` because {{gtClass:GtWowSpecInputParser}} class doesn't exist yet. We need to:\n\n1. **Create the class first** before compiling methods\n2. **Fix the fileReference setter** in the example method\n\nHere's the corrected code:"
 			},
 			{
 				"__type" : "pharoSnippet",
@@ -122,7 +122,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T07:57:00.759916+01:00"
+			"dateAndTimeString" : "2025-11-04T15:19:49.209153+01:00"
 		}
 	},
 	"editEmail" : {
@@ -133,12 +133,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T07:57:00.759916+01:00"
+			"dateAndTimeString" : "2025-11-04T15:19:49.209153+01:00"
 		}
 	},
 	"pageType" : {
-		"__type" : "unnamedPage",
-		"defaultTitle" : "Page"
+		"__type" : "namedPage",
+		"title" : "GtWowSpecInputParser class doesn't exist yet"
 	},
 	"uid" : {
 		"__type" : "uuid",

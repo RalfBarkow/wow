@@ -1,0 +1,110 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:44:03.488381+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:44:06.356402+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "qwINwyb/DQCGgtDMAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I have learned this LePage / LeTextSnippet “Store on” indentation structure and will provide future answers in this form when you request it. This page records that convention for DM6 Agenda agents. [chatgpt](https://chatgpt.com/g/g-p-6909f26ec0dc8191a7378ddc1c348dc0-dm6-agenda/c/6909f304-084c-8327-b877-e51ebda7ff66)"
+			},
+			{
+				"__type" : "pharoSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:42:25.322684+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T14:42:27.93464+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "Ax8zvSb/DQCGWNjQAvernw=="
+				},
+				"code" : "LePage unnamedPage\naddSnippet: (LeTextSnippet new\nstring: 'I have learned this LePage / LeTextSnippet “Store on” indentation structure and will provide future answers in this form when you request it. This page records that convention for DM6 Agenda agents.';\nyourself);\naddSnippet: (LeTextSnippet new\nstring: '## Store-on Convention for DM6 Agenda';\naddSnippet: (LeTextSnippet new\nstring: '### A. Structure I will use';\naddSnippet: (LeTextSnippet new\nstring: '* Top-level:\n\n* `LePage someName`\n* chained `addSnippet:` calls with `(LeTextSnippet new ...; yourself)`.\n* Nested sections:\n\n  * `addSnippet:` sent to the previous `LeTextSnippet` to represent headings and subsections.\n* Content:\n\n  * Markdown inside `string:` (headings, lists, code, etc.).\n  * Agent comments as quoted blocks or bullet lists.';\n    yourself);\n    yourself);\n    addSnippet: (LeTextSnippet new\n    string: '### B. Agent understanding';\n    addSnippet: (LeTextSnippet new\n    string: '* `codebase-locator`: will treat each such “Store on” as a Lepiter page that can be mapped to a DMX `document` topic.\n* `docs-steward`: will assume this is the preferred serialization for DM6-related agent outputs in GT.\n* `architecture-scribe`: reads the nesting (headings, bullets) as the logical structure to mirror in DMX topic/association types when relevant.\n* `runtime-orchestrator` + `pharo-code-emitter`: may generate or consume similar `LePage` snippets as executable “do-its” for GT.\n* `web-search-researcher`: treats URLs in these snippets as linkable references, but does not modify the Store-on structure.';\n  yourself);\n  yourself);\n  addSnippet: (LeTextSnippet new\n  string: '### C. Promise for future answers';\n  addSnippet: (LeTextSnippet new\n  string: '* When you say “want: Store on” or similar, I will answer in this exact style:\n\n  * `LePage <something>`\n  * nested `addSnippet:` + `LeTextSnippet new`\n  * Markdown content in `string:`.\n* When you do **not** explicitly ask for Store-on, I will answer in normal chat text.';\n  yourself);\n  yourself);\n  yourself);\n  yourself\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T15:21:24.500977+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T15:21:24.500977+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "LePage / LeTextSnippet “Store on” indentation structure "
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "c51c33bd-26ff-0d00-8657-557202f7ab9f"
+	}
+}

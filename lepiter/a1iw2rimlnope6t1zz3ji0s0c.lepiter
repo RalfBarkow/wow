@@ -125,7 +125,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T11:09:55.416632+01:00"
+			"dateAndTimeString" : "2025-11-04T15:20:44.363158+01:00"
 		}
 	},
 	"editEmail" : {
@@ -136,12 +136,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T11:09:55.416632+01:00"
+			"dateAndTimeString" : "2025-11-04T15:20:44.363158+01:00"
 		}
 	},
 	"pageType" : {
-		"__type" : "unnamedPage",
-		"defaultTitle" : "Page"
+		"__type" : "namedPage",
+		"title" : "Let WowDitaBuild ask the codebase-locator agent"
 	},
 	"uid" : {
 		"__type" : "uuid",

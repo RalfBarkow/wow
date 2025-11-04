@@ -1,0 +1,150 @@
+{
+	"__schema" : "4.1",
+	"__type" : "page",
+	"children" : {
+		"__type" : "snippets",
+		"items" : [
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T13:43:09.519401+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T13:43:09.519401+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "KdhB6SX/DQCLDJAAAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "Here’s a first joint pass from “all agents” treating `/view/dm6-agenda` as the project’s living front-door. [chatgpt](https://chatgpt.com/g/g-p-6909f26ec0dc8191a7378ddc1c348dc0-dm6-agenda/c/6909f304-084c-8327-b877-e51ebda7ff66)\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T13:43:11.69682+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T13:43:11.69682+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "GRJj6SX/DQCLE3r3Avernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "I’ll phrase it as short “notes + proposed next move” per agent so you can decide what to actually do next.\n"
+			},
+			{
+				"__type" : "textSnippet",
+				"children" : {
+					"__type" : "snippets",
+					"items" : [ ]
+				},
+				"createEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"createTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T13:42:40.863843+01:00"
+					}
+				},
+				"editEmail" : {
+					"__type" : "email",
+					"emailString" : "<unknown>"
+				},
+				"editTime" : {
+					"__type" : "time",
+					"time" : {
+						"__type" : "dateAndTime",
+						"dateAndTimeString" : "2025-11-04T13:43:11.826186+01:00"
+					}
+				},
+				"uid" : {
+					"__type" : "uid",
+					"uidString" : "m56M5yX/DQCK4R1iAvernw=="
+				},
+				"paragraphStyle" : {
+					"__type" : "textStyle"
+				},
+				"string" : "---\n\n### 🔎 codebase-locator\n\n**Read of dm6-agenda:**\n\n* Treats `dm6-agenda` as the *umbrella workspace* over:\n\n  * `dmx-platform` (+ `dmx-dita`, `dmx-fedwiki`, `dmx-zettelkasten`)\n  * `gt4nix` / GT image + agents\n  * `wow` (position paper, DITA pipeline)\n  * Elm topic map / wiki frontends (`dm6-elm`, `wiki-plugin-topicmap`, etc.)\n* The `/view/dm6-agenda` page is effectively the *routing hub* for these projects, but the mapping “page → git repo root” is not yet explicit.\n\n**Next move (locator):**\n\n* Define a **DM6AgendaCodebaseLocator** (class or config) that knows:\n\n  * `dm6-agenda` → list of repo roots (workspace paths)\n  * For each repo: primary SPEC doc (e.g. `wow/SPEC.md`, `dmx-platform/docs/…`, `gt4nix/docs/…`).\n* Expose an API like:\n\n  ```smalltalk\n  DM6AgendaCodebaseLocator class>>projects\n  DM6AgendaCodebaseLocator class>>specForProjectNamed:\n  ```\n\nso other agents can query “what does dm6-agenda mean in code?”.\n\n---\n\n### 📚 docs-steward\n\n**Read of dm6-agenda:**\n\n* Right now, “DM6 Agenda” exists more as a *cluster of conversations* than as a clean document set.\n* The /view page should point to a minimal, shared document spine:\n\n  * `SPEC.md` – what DM6 Agenda *is* (scope, agents, repos).\n  * `IMPLEMENTATION_PLAN.md` – current focus items and who (which agent) owns them.\n  * `WORKLOG.md` / `PROGRESS.md` – cross-project log (short entries, linking into repo-local logs).\n\n**Next move (docs):**\n\n* Create a **top-level DM6 Agenda SPEC** (wherever you prefer; e.g. in a dedicated `dm6-agenda` repo or in `wow/docs/DM6-AGENDA-SPEC.md`) with:\n\n  1. Purpose: “DM6 Agenda is the coordination layer connecting DMX, GT, Elm/FedWiki, and WOW.”\n  2. Projects table: columns = *Project* / *Repo* / *Primary Doc* / *Runtime*.\n  3. Agents table: *Agent* / *Responsibilities* / *Typical inputs* / *Typical outputs*.\n\n* Then link that SPEC from `/view/dm6-agenda` as “canonical description”.\n\n---\n\n### 🧭 architecture-scribe\n\n**Read of dm6-agenda:**\n\nSees `dm6-agenda` as the **system-of-systems architecture page**. Right now the architecture is present in your head + chats, but not captured as a diagram with clear boundaries.\n\n**Next move (architecture):**\n\n* Capture **one core diagram** for DM6 Agenda:\n\n  * Layers:\n\n    * *Runtime layer*: DMX 5.x (OSGi), GT/Pharo, Nix shells, Node/Elm.\n    * *Integration layer*: DITA plugin, FedWiki plugins, GT codebase locators, agents.\n    * *Interface layer*: FedWiki pages (`/view/...`), Elm topicmaps, GT tools.\n    * *Theory layer*: Luhmann / WOW position paper / Zettelkasten concepts.\n\n* Add a short CRC-style note per major “thing”:\n\n  * `DM6Agenda` – coordinates projects & agents.\n  * `DMXPlatformIntegration` – owns DITA + FedWiki plugs.\n  * `GTAgentHost` – where agents run and access code.\n  * `FedWikiFrontdoor` – how `/view/dm6-agenda` exposes everything.\n\nEven a quick hand-rolled Markdown “pseudo-diagram” on the dm6-agenda page would already be a big win.\n\n---\n\n### ⚙️ runtime-orchestrator\n\n**Read of dm6-agenda:**\n\n* Sees `/view/dm6-agenda` as the **control panel** for multiple runtimes:\n\n  * DMX runtime (with bundle issues like SLF4J & dmx-dita).\n  * GT image with agents (codebase locator, parsers, wrappers).\n  * Nix environments for dmx-platform, wow, gt4nix.\n  * Node/Elm build chains.\n\n**Next move (runtime):**\n\n* Declare a tiny **runtime matrix** attached to DM6 Agenda:\n\n  * For each project:\n\n    * How to start it (Nix command, GT script, DMX start).\n    * Known incompatibilities (e.g., SLF4J range for dmx-dita-0.2.1 vs DMX 5.3.5).\n    * Which agent “owns” problems there (runtime-orchestrator, pharo-code-emitter, etc.).\n\n* Provide one **orchestrator entrypoint** in GT:\n\n  ```smalltalk\n  DM6AgendaRuntimeOrchestrator class>>openDashboard\n  ```\n\n  that, when run, inspects the current workspace and reports:\n\n  * Which runtimes are available.\n  * Which ones are misconfigured.\n  * Links (or commands) to fix / start them.\n\n---\n\n### 🧪 pharo-code-emitter\n\n**Read of dm6-agenda:**\n\n* Interprets dm6-agenda as a *spec source* that should be consumable from inside GT, similarly to how WOW’s SPEC/DITA files are being parsed.\n* Currently there’s logic for `GtWowSpecInputParser`, `DmxCodebaseLocator`, etc. DM6 Agenda itself isn’t yet a first-class object in the image.\n\n**Next move (code emitter):**\n\n* Introduce a **GtDm6AgendaInputFile / Parser** pair:\n\n  * Knows how to:\n\n    * Locate the DM6 Agenda SPEC file (via `DM6AgendaCodebaseLocator`).\n    * Parse essential info (list of projects, agents).\n    * Provide GT views (e.g., tree of agents ↔ repos).\n\n* Provide a convenience example:\n\n  ```smalltalk\n  GtDm6AgendaInputParser class>>exampleOpenAgendaInPlayground\n  ```\n\n  that evaluates to a model object representing DM6 Agenda, ready for inspection.\n\n---\n\n### 🌍 web-search-researcher\n\n**Read of dm6-agenda:**\n\n* Sees it as the **coordination surface** for all external references:\n\n  * Scientific work (Luhmann, Condorcet, Müller, etc.).\n  * Tool ecosystem docs (DMX, GT, FedWiki, Nix, DITA-OT).\n* Right now, the links and references are distributed across multiple pages and chats.\n\n**Next move (research):**\n\n* Maintain a small **“Research Index” section** linked from dm6-agenda:\n\n  * Subsections like:\n\n    * *Theoretical Foundations* (Luhmann, Latour, Müller, etc.).\n    * *Tool References* (DMX manual, GT docs, Nix manual, DITA-OT docs).\n  * Each item: short purpose + link.\n\n* For each new major feature (e.g., DITA wrapping, SLF4J compatibility, narrative path), add a bullet:\n\n  * “See also: [external doc / paper] – how it informs this design.”\n\n---\n\n### 🗂 docs-steward + architecture-scribe + runtime-orchestrator: joint proposal\n\n**Minimal concrete next iteration, anchored at `/view/dm6-agenda`:**\n\n1. Create a **DM6 Agenda SPEC** (one Markdown file) with:\n\n   * Project table.\n   * Agent table.\n   * Runtime matrix (high level).\n2. Link this SPEC clearly from `/view/dm6-agenda` as:\n\n   * “DM6 Agenda – current SPEC”\n3. In GT:\n\n   * Teach `DM6AgendaCodebaseLocator` where that SPEC lives.\n   * Add one simple GT example method that opens the SPEC via a `FileReference`.\n\nOnce that exists, all the other moves (parsers, runtime dashboard, CRC cards) can hook into it.\n\nIf you tell me where you want the SPEC to live (which repo/path), I can draft the first version of that file plus the corresponding Smalltalk scaffolding in one go.\n"
+			}
+		]
+	},
+	"createEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"createTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T13:52:04.86984+01:00"
+		}
+	},
+	"editEmail" : {
+		"__type" : "email",
+		"emailString" : "<unknown>"
+	},
+	"editTime" : {
+		"__type" : "time",
+		"time" : {
+			"__type" : "dateAndTime",
+			"dateAndTimeString" : "2025-11-04T13:52:23.779365+01:00"
+		}
+	},
+	"pageType" : {
+		"__type" : "namedPage",
+		"title" : "First joint pass from “all agents” treating /view/dm6-agenda as the project’s living front-door"
+	},
+	"uid" : {
+		"__type" : "uuid",
+		"uuid" : "b89b8ce7-25ff-0d00-8ae0-8a2f02f7ab9f"
+	}
+}

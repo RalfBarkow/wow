@@ -48,7 +48,7 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T09:42:24.476335+01:00"
+			"dateAndTimeString" : "2025-11-04T15:22:01.894495+01:00"
 		}
 	},
 	"editEmail" : {
@@ -59,12 +59,12 @@
 		"__type" : "time",
 		"time" : {
 			"__type" : "dateAndTime",
-			"dateAndTimeString" : "2025-11-04T09:42:24.476335+01:00"
+			"dateAndTimeString" : "2025-11-04T15:22:01.894495+01:00"
 		}
 	},
 	"pageType" : {
-		"__type" : "unnamedPage",
-		"defaultTitle" : "Page"
+		"__type" : "namedPage",
+		"title" : "Clean up #canHandle: and fix exampleEvaluateWowSpecOnHome"
 	},
 	"uid" : {
 		"__type" : "uuid",
